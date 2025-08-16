@@ -19,6 +19,7 @@
   "homepage": "https://github.com/apociello/to-do-list#readme",
   "devDependencies": {
     "webpack": "^5.101.2",
-    "webpack-cli": "^6.0.1"
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2"
   }
 }
