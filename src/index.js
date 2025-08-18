@@ -1,4 +1,5 @@
 import {Task, logTaskDetails, changeTaskTitle, changeTaskDescription, changeTaskDueDate, changeTaskPriority, changeTaskCheckedStatus} from "./modules/task.js"
+import {Project, addTask, logProjectTasks} from "./modules/project.js"
 
 window.Task = Task;
 window.logTaskDetails = logTaskDetails;
@@ -7,7 +8,37 @@ window.changeTaskDescription = changeTaskDescription;
 window.changeTaskDueDate = changeTaskDueDate;
 window.changeTaskPriority = changeTaskPriority;
 window.changeTaskCheckedStatus = changeTaskCheckedStatus; 
+window.Project = Project;
+window.logProjectTasks = logProjectTasks;
+window.addTask = addTask;
 
 
 
-//const task = new Task('Minecraft', 'Kill the dragon', '23/08/25', 'High', 'false')
+
+/* 
+const project1 = new Project("Personal Development");
+
+const task1 = new Task(
+  "Learn JavaScript",
+  "Review classes and modules for the project",
+  "2025-08-20",
+  "High",
+  false
+);
+
+const task2 = new Task(
+  "Workout",
+  "30 minutes of cardio and stretching",
+  "2025-08-21",
+  "Medium",
+  false
+);
+
+const task3 = new Task(
+  "Read a book",
+  "Finish reading 50 pages of 'Atomic Habits'",
+  "2025-08-22",
+  "Low",
+  false
+);
+*/
