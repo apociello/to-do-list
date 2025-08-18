@@ -1,5 +1,13 @@
-import {Task, logDetails} from "./modules/task.js"
+import {Task, logTaskDetails, changeTaskTitle, changeTaskDescription, changeTaskDueDate, changeTaskPriority, changeTaskCheckedStatus} from "./modules/task.js"
 
-const task1 = new Task("Minecraft", "We are playing Minecraft: We need diamonds!", "16/08/2025", "High", "false" );
+window.Task = Task;
+window.logTaskDetails = logTaskDetails;
+window.changeTaskTitle = changeTaskTitle;
+window.changeTaskDescription = changeTaskDescription;
+window.changeTaskDueDate = changeTaskDueDate;
+window.changeTaskPriority = changeTaskPriority;
+window.changeTaskCheckedStatus = changeTaskCheckedStatus; 
 
-logDetails(task1)
+
+
+//const task = new Task('Minecraft', 'Kill the dragon', '23/08/25', 'High', 'false')
