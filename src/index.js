@@ -41,4 +41,10 @@ const task3 = new Task(
   "Low",
   false
 );
+
+addTask(project1, task1);
+addTask(project1, task2);
+addTask(project1, task3);
+
+logProjectTasks(project1)
 */
