@@ -1,4 +1,3 @@
-
 export class Task {
     constructor(title, description, duedate, priority, checked) {
         this.title = title;
@@ -9,3 +8,6 @@ export class Task {
     }
 }
 
+export function logDetails(task) {
+    console.log(`TITLE: ${task.title}, DESCRIPTION: ${task.description}, DATE: ${task.duedate}, PRIORITY: ${task.priority}, CHECKED: ${task.checked}   `)
+}
