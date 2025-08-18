@@ -1,18 +1,9 @@
 import { greeting } from "./greeting";
+import {Task} from "./modules/task.js"
 
 console.log(greeting);
 
-class CreateTask {
-    constructor(title, description, duedate, priority, checked) {
-        this.title = title;
-        this.description = description;
-        this.duedate = duedate;
-        this.priority = priority;
-        this.checked = checked;
-    }
-}
-
-const task1 = new CreateTask("Minecraft", "We are playing Minecraft: We need diamonds!", "16/08/2025", "High", "false" );
+const task1 = new Task("Minecraft", "We are playing Minecraft: We need diamonds!", "16/08/2025", "High", "false" );
 
 console.log(task1);
 console.log(task1.title);
