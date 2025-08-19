@@ -9,25 +9,5 @@ export class Task {
 }
 
 export function logTaskDetails(task) {
-    console.log(`TITLE: ${task.title}, DESCRIPTION: ${task.description}, DATE: ${task.duedate}, PRIORITY: ${task.priority}, CHECKED: ${task.checked}   `)
-}
-
-export function changeTaskTitle(task, newTitle) {
-    return task.title = newTitle
-}
-
-export function changeTaskDescription(task, newDescription) {
-    return task.description = newDescription
-}
-
-export function changeTaskDueDate(task, newDueDate) {
-    return task.duedate = newDueDate
-}
-
-export function changeTaskPriority(task, newPriority) {
-    return task.priority = newPriority
-}
-
-export function changeTaskCheckedStatus(task) {
-    return task.checked = task.checked === 'false' ? 'true' : 'false'
+    console.log(`Title: ${task.title}\nDescription: ${task.description}\nDue Date: ${task.duedate}\nPriority: ${task.priority}\nChecked: ${task.checked}   `)
 }

@@ -1,13 +1,8 @@
-import {Task, logTaskDetails, changeTaskTitle, changeTaskDescription, changeTaskDueDate, changeTaskPriority, changeTaskCheckedStatus} from "./modules/task.js"
+import {Task, logTaskDetails} from "./modules/task.js"
 import {Project, addTask, logProjectTasks} from "./modules/project.js"
 
 window.Task = Task;
 window.logTaskDetails = logTaskDetails;
-window.changeTaskTitle = changeTaskTitle;
-window.changeTaskDescription = changeTaskDescription;
-window.changeTaskDueDate = changeTaskDueDate;
-window.changeTaskPriority = changeTaskPriority;
-window.changeTaskCheckedStatus = changeTaskCheckedStatus; 
 window.Project = Project;
 window.logProjectTasks = logProjectTasks;
 window.addTask = addTask;
