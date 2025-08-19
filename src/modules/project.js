@@ -1,14 +1,23 @@
 export class Project {
+    static projectList = [];
+
     constructor(title) {
         this.title = title;
         this.taskList = []
+        Project.projectList.push(this)
     }
-}
 
-export function addTask(project, task) {
-    return project.taskList.push(task)
-}
+    static deleteProject(project) {
+        const index = Project.projectList.indexOf(project);
+        Project.projectList.splice(index, 1)
+    }
 
-export function logProjectTasks(project) {
-    console.table(project.taskList)
+    addTask(task) {
+        this.taskList.push(task)
+    }
+
+    deleteTask(task) {
+        const index = this.taskList.indexOf(task);
+        this.taskList.splice(index, 1)
+    }
 }

@@ -1,13 +1,9 @@
-import {Task, logTaskDetails} from "./modules/task.js"
-import {Project, addTask, logProjectTasks} from "./modules/project.js"
+import { Task, logTaskDetails } from "./modules/task.js"
+import { Project } from "./modules/project.js"
 
 window.Task = Task;
 window.logTaskDetails = logTaskDetails;
 window.Project = Project;
-window.logProjectTasks = logProjectTasks;
-window.addTask = addTask;
-
-
 
 
 /* 
@@ -37,9 +33,37 @@ const task3 = new Task(
   false
 );
 
-addTask(project1, task1);
-addTask(project1, task2);
-addTask(project1, task3);
+project1.addTask(task1)
+project1.addTask(task2)
+project1.addTask(task3)
 
-logProjectTasks(project1)
+const project2 = new Project("Work & Career");
+
+const task4 = new Task(
+  "Prepare Presentation",
+  "Create slides for Monday's meeting",
+  "2025-08-23",
+  "High",
+  false
+);
+
+const task5 = new Task(
+  "Update Resume",
+  "Add recent projects and skills",
+  "2025-08-24",
+  "Medium",
+  false
+);
+
+const task6 = new Task(
+  "Networking",
+  "Send follow-up emails to 3 contacts",
+  "2025-08-25",
+  "Low",
+  false
+);
+
+project2.addTask(task4);
+project2.addTask(task5);
+project2.addTask(task6);
 */
