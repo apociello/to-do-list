@@ -1,5 +1,5 @@
-import { Task, logTaskDetails } from "./modules/task.js"
-import { Project } from "./modules/project.js"
+import { Task, logTaskDetails } from "./projects/task.js"
+import { Project } from "./projects/project.js"
 
 window.Task = Task;
 window.logTaskDetails = logTaskDetails;
