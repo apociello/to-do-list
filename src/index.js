@@ -1,9 +1,12 @@
 import { Task, logTaskDetails } from "./projects/task.js"
 import { Project } from "./projects/project.js"
+import { collectTasks, returnTodayTasks } from "./todo/today.js"
 
 window.Task = Task;
 window.logTaskDetails = logTaskDetails;
 window.Project = Project;
+window.collectTasks = collectTasks;
+window.returnTodayTasks = returnTodayTasks;
 
 
 /* 
@@ -12,7 +15,7 @@ const project1 = new Project("Personal Development");
 const task1 = new Task(
   "Learn JavaScript",
   "Review classes and modules for the project",
-  "2025-08-20",
+  "2025-08-19",
   "High",
   false
 );
@@ -28,7 +31,7 @@ const task2 = new Task(
 const task3 = new Task(
   "Read a book",
   "Finish reading 50 pages of 'Atomic Habits'",
-  "2025-08-22",
+  "2025-08-19",
   "Low",
   false
 );
@@ -42,7 +45,7 @@ const project2 = new Project("Work & Career");
 const task4 = new Task(
   "Prepare Presentation",
   "Create slides for Monday's meeting",
-  "2025-08-23",
+  "2025-08-19",
   "High",
   false
 );
