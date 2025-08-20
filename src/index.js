@@ -2,6 +2,7 @@ import { Task } from "./projects/task.js"
 import { Project } from "./projects/project.js"
 import { getAllTasks, getWeekTasks, getTodayTasks } from "./todo/todo.js";
 import { Note } from "./notes/note.js";
+import "./style.css"
 
 
 const allProjects = Project.projectList;
