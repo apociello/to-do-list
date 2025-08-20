@@ -1,6 +1,7 @@
 import { Task, logTaskDetails } from "./projects/task.js"
 import { Project } from "./projects/project.js"
 import { getAllTasks, getWeekTasks, getTodayTasks } from "./todo/todo.js";
+import { Note } from "./notes/note.js";
 
 window.Task = Task;
 window.logTaskDetails = logTaskDetails;
@@ -8,6 +9,7 @@ window.Project = Project;
 window.getAllTasks = getAllTasks;
 window.getTodayTasks = getTodayTasks;
 window.getWeekTasks = getWeekTasks;
+window.Note = Note;
 
 
 /* 
