@@ -1,18 +1,12 @@
-import { Task, logTaskDetails } from "./projects/task.js"
+import { Task } from "./projects/task.js"
 import { Project } from "./projects/project.js"
 import { getAllTasks, getWeekTasks, getTodayTasks } from "./todo/todo.js";
 import { Note } from "./notes/note.js";
 
-window.Task = Task;
-window.logTaskDetails = logTaskDetails;
-window.Project = Project;
-window.getAllTasks = getAllTasks;
-window.getTodayTasks = getTodayTasks;
-window.getWeekTasks = getWeekTasks;
-window.Note = Note;
 
+const allProjects = Project.projectList;
+const allNotes = Note.noteList;
 
-/* 
 const project1 = new Project("Personal Development");
 
 const task1 = new Task(
@@ -72,4 +66,25 @@ const task6 = new Task(
 project2.addTask(task4);
 project2.addTask(task5);
 project2.addTask(task6);
-*/
+
+
+const note1 = new Note('Games');
+note1.text = 'Minecraft, Stardew Valley, Rocket League, Resident Evil';
+
+const note2 = new Note('Cat');
+note2.text = 'Ronny, Maya';
+
+
+// console log
+// TO DO
+const allTasks = getAllTasks(allProjects);
+console.log(getTodayTasks(allTasks));
+console.log(getWeekTasks(allTasks));
+console.log(allTasks)
+
+// PROJECTS
+console.log(allProjects)
+
+//NOTES
+console.log(allNotes);
+

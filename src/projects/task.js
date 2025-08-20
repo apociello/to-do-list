@@ -7,7 +7,3 @@ export class Task {
         this.checked = checked;
     }
 }
-
-export function logTaskDetails(task) {
-    console.log(`Title: ${task.title}\nDescription: ${task.description}\nDue Date: ${task.duedate}\nPriority: ${task.priority}\nChecked: ${task.checked}   `)
-}
