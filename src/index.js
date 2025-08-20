@@ -1,12 +1,11 @@
 import { Task, logTaskDetails } from "./projects/task.js"
 import { Project } from "./projects/project.js"
-import { collectTasks, getTodayTasks } from "./todo/today.js"
-import { getWeekTasks } from "./todo/this_week.js";
+import { getAllTasks, getWeekTasks, getTodayTasks } from "./todo/todo.js";
 
 window.Task = Task;
 window.logTaskDetails = logTaskDetails;
 window.Project = Project;
-window.collectTasks = collectTasks;
+window.getAllTasks = getAllTasks;
 window.getTodayTasks = getTodayTasks;
 window.getWeekTasks = getWeekTasks;
 
