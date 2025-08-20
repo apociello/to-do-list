@@ -13,12 +13,12 @@ export function collectTasks(projectList) {
     return allTasks;
 }
 
-export function returnTodayTasks(allTasks) {
+export function getTodayTasks(allTasks) {
     const todayTasks = [];
 
     const todayDate = new Date();
     for (const task of allTasks) {
-        const taskDate = task.duedate
+        const taskDate = new Date(task.duedate)
         if (isSameDay(taskDate, todayDate)) {
             todayTasks.push(task)
         }

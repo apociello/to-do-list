@@ -1,12 +1,14 @@
 import { Task, logTaskDetails } from "./projects/task.js"
 import { Project } from "./projects/project.js"
-import { collectTasks, returnTodayTasks } from "./todo/today.js"
+import { collectTasks, getTodayTasks } from "./todo/today.js"
+import { getWeekTasks } from "./todo/this_week.js";
 
 window.Task = Task;
 window.logTaskDetails = logTaskDetails;
 window.Project = Project;
 window.collectTasks = collectTasks;
-window.returnTodayTasks = returnTodayTasks;
+window.getTodayTasks = getTodayTasks;
+window.getWeekTasks = getWeekTasks;
 
 
 /* 
@@ -31,7 +33,7 @@ const task2 = new Task(
 const task3 = new Task(
   "Read a book",
   "Finish reading 50 pages of 'Atomic Habits'",
-  "2025-08-19",
+  "2025-08-28",
   "Low",
   false
 );
@@ -45,7 +47,7 @@ const project2 = new Project("Work & Career");
 const task4 = new Task(
   "Prepare Presentation",
   "Create slides for Monday's meeting",
-  "2025-08-19",
+  "2025-08-27",
   "High",
   false
 );
@@ -61,7 +63,7 @@ const task5 = new Task(
 const task6 = new Task(
   "Networking",
   "Send follow-up emails to 3 contacts",
-  "2025-08-25",
+  "2025-08-20",
   "Low",
   false
 );
