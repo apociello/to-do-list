@@ -92,6 +92,7 @@ main {
     gap: 2rem;
 }
 
-h1 {
+#title {
     align-self: center;
+    font-size: 2rem;
 }

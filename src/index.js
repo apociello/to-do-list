@@ -3,10 +3,100 @@ import { Project } from "./modules/projects/project.js"
 import { getAllTasks, getWeekTasks, getTodayTasks } from "./modules/todo/todo.js";
 import { Note } from "./modules/notes/note.js";
 import "./style.css"
-
+import { inbox } from "./pages/inbox/inbox.js";
 
 const allProjects = Project.projectList;
 const allNotes = Note.noteList;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 const project1 = new Project("Personal Development");
 
@@ -88,4 +178,7 @@ console.log(allProjects)
 
 //NOTES
 console.log(allNotes);
+
+
+
 
