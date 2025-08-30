@@ -55,8 +55,19 @@ body {
     padding: 0.4rem;
 }
 
+.file-line {
+    display: flex;
+    gap: 0.2rem;
+    padding: 0.2rem;
+    padding-left: 2rem;
+}
+
 .sidebar-icon {
     width: 20px;
+}
+
+.file-icon {
+    width: 15px;
 }
 
 li {
