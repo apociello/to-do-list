@@ -4,6 +4,7 @@ import { getAllTasks, getWeekTasks, getTodayTasks } from "./modules/todo/todo.js
 import { Note } from "./modules/notes/note.js";
 import "./style.css"
 import { inbox } from "./pages/inbox/inbox.js";
+import { today } from "./pages/today/today.js";
 
 const allProjects = Project.projectList;
 const allNotes = Note.noteList;
@@ -103,7 +104,7 @@ const project1 = new Project("Personal Development");
 const task1 = new Task(
   "Learn JavaScript",
   "Review classes and modules for the project",
-  "2025-08-19",
+  "2025-08-30",
   "High",
   false
 );
@@ -119,7 +120,7 @@ const task2 = new Task(
 const task3 = new Task(
   "Read a book",
   "Finish reading 50 pages of 'Atomic Habits'",
-  "2025-08-28",
+  "2025-08-30",
   "Low",
   false
 );
@@ -141,7 +142,7 @@ const task4 = new Task(
 const task5 = new Task(
   "Update Resume",
   "Add recent projects and skills",
-  "2025-08-24",
+  "2025-08-30",
   "Medium",
   false
 );
@@ -179,6 +180,6 @@ console.log(allProjects)
 //NOTES
 console.log(allNotes);
 
-
+today(allProjects)
 
 
