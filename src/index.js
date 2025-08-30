@@ -183,6 +183,6 @@ console.log(allProjects)
 //NOTES
 console.log(allNotes);
 
-notePage(note1)
+inboxPage(allProjects)
 
 
