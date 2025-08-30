@@ -87,5 +87,11 @@ li {
 main {
     background-color:rgb(22, 22, 24);
     padding: 2.5rem;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+h1 {
+    align-self: center;
 }
