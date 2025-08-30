@@ -51,14 +51,38 @@ body {
 
 .section-line {
     display: flex;
-    gap: 0.5rem;
+    justify-content: space-between;
     padding: 0.4rem;
 }
+
+.section-line-right {
+    padding-right: 0.5rem;
+    display: none;
+}
+
+.sidebar-add-icon {
+    width: 15px;
+    border-radius: 5px;
+}
+
+.sidebar-add-icon:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.section-line-left {
+    display: flex;
+    gap: 0.5rem;
+}
+
 
 .section-line:hover {
     cursor: pointer;
     background-color: rgba(255, 255, 255, 0.05);
     border-radius: 5px;
+}
+
+.section-line:hover .section-line-right {
+    display: flex;
 }
 
 .file-line {
