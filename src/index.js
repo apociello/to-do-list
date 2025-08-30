@@ -7,6 +7,7 @@ import { inboxPage } from "./pages/inbox/inboxPage.js";
 import { todayPage } from "./pages/today/todayPage.js";
 import { thisWeekPage } from "./pages/this_week/thisWeekPage.js";
 import { projectPage } from "./pages/project/projectPage.js";
+import { notePage } from "./pages/note/notePage.js";
 
 const allProjects = Project.projectList;
 const allNotes = Note.noteList;
@@ -182,6 +183,6 @@ console.log(allProjects)
 //NOTES
 console.log(allNotes);
 
-projectPage(project2)
+notePage(note1)
 
 
