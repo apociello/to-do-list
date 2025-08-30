@@ -26,8 +26,8 @@ body {
 }
 
 .sidebar {
-    background-color: rgb(28, 28, 30);
-    padding: 1rem 1rem;
+    background-color: #0F172A;
+    padding: 1rem 0.5rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -55,6 +55,12 @@ body {
     padding: 0.4rem;
 }
 
+.section-line:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 5px;
+}
+
 .file-line {
     display: flex;
     gap: 0.2rem;
@@ -64,6 +70,10 @@ body {
 
 .sidebar-icon {
     width: 20px;
+}
+
+.task-icon {
+    width: 16px;
 }
 
 .file-icon {
@@ -85,7 +95,7 @@ li {
 }
 
 main {
-    background-color:rgb(22, 22, 24);
+    background-color:#1E293B;
     padding: 2.5rem;
     display: flex;
     flex-direction: column;
