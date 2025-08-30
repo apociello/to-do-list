@@ -3,10 +3,10 @@ import { Project } from "./modules/projects/project.js"
 import { getAllTasks, getWeekTasks, getTodayTasks } from "./modules/todo/todo.js";
 import { Note } from "./modules/notes/note.js";
 import "./style.css"
-import { inboxPage } from "./pages/inbox/inbox.js";
-import { todayPage } from "./pages/today/today.js";
-import { thisWeekPage } from "./pages/this_week/thisWeek.js";
-import { projectPage } from "./pages/project/project.js";
+import { inboxPage } from "./pages/inbox/inboxPage.js";
+import { todayPage } from "./pages/today/todayPage.js";
+import { thisWeekPage } from "./pages/this_week/thisWeekPage.js";
+import { projectPage } from "./pages/project/projectPage.js";
 
 const allProjects = Project.projectList;
 const allNotes = Note.noteList;
