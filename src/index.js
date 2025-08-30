@@ -5,6 +5,7 @@ import { Note } from "./modules/notes/note.js";
 import "./style.css"
 import { inbox } from "./pages/inbox/inbox.js";
 import { today } from "./pages/today/today.js";
+import { this_week } from "./pages/this_week/thisWeek.js";
 
 const allProjects = Project.projectList;
 const allNotes = Note.noteList;
@@ -120,7 +121,7 @@ const task2 = new Task(
 const task3 = new Task(
   "Read a book",
   "Finish reading 50 pages of 'Atomic Habits'",
-  "2025-08-30",
+  "2025-09-02",
   "Low",
   false
 );
@@ -142,7 +143,7 @@ const task4 = new Task(
 const task5 = new Task(
   "Update Resume",
   "Add recent projects and skills",
-  "2025-08-30",
+  "2025-09-01",
   "Medium",
   false
 );
@@ -180,6 +181,6 @@ console.log(allProjects)
 //NOTES
 console.log(allNotes);
 
-today(allProjects)
+this_week(allProjects)
 
 
