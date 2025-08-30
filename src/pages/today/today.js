@@ -1,6 +1,6 @@
 import { getAllTasks, getTodayTasks } from "../../modules/todo/todo";
 
-function today(projects) {
+function todayPage(projects) {
     const title = document.getElementById('title');
     title.textContent = 'Today'
 
@@ -16,4 +16,4 @@ function today(projects) {
     })
 }
 
-export {today}
+export {todayPage}

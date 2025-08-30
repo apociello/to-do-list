@@ -3,9 +3,10 @@ import { Project } from "./modules/projects/project.js"
 import { getAllTasks, getWeekTasks, getTodayTasks } from "./modules/todo/todo.js";
 import { Note } from "./modules/notes/note.js";
 import "./style.css"
-import { inbox } from "./pages/inbox/inbox.js";
-import { today } from "./pages/today/today.js";
-import { this_week } from "./pages/this_week/thisWeek.js";
+import { inboxPage } from "./pages/inbox/inbox.js";
+import { todayPage } from "./pages/today/today.js";
+import { thisWeekPage } from "./pages/this_week/thisWeek.js";
+import { projectPage } from "./pages/project/project.js";
 
 const allProjects = Project.projectList;
 const allNotes = Note.noteList;
@@ -181,6 +182,6 @@ console.log(allProjects)
 //NOTES
 console.log(allNotes);
 
-this_week(allProjects)
+projectPage(project2)
 
 

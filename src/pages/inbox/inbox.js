@@ -1,7 +1,7 @@
 import { getAllTasks } from "../../modules/todo/todo.js";
 
 
-function inbox(projects) {
+function inboxPage(projects) {
     const title = document.getElementById('title');
     title.textContent = 'Inbox'
 
@@ -17,4 +17,4 @@ function inbox(projects) {
 
 }
 
-export {inbox}
+export {inboxPage}

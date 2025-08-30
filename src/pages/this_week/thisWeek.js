@@ -1,6 +1,6 @@
 import { getAllTasks, getWeekTasks } from "../../modules/todo/todo";
 
-function this_week(projects) {
+function thisWeekPage(projects) {
     const title = document.getElementById('title');
     title.textContent = 'This Week'
 
@@ -16,4 +16,4 @@ function this_week(projects) {
     })
 }
 
-export {this_week}
+export {thisWeekPage}
