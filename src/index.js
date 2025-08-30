@@ -1,7 +1,7 @@
-import { Task } from "./modules/projects/task.js"
-import { Project } from "./modules/projects/project.js"
-import { getAllTasks, getWeekTasks, getTodayTasks } from "./modules/todo/todo.js";
-import { Note } from "./modules/notes/note.js";
+import { Task } from "./modules/task.js"
+import { Project } from "./modules/project.js"
+import { getAllTasks, getWeekTasks, getTodayTasks } from "./modules/todo.js";
+import { Note } from "./modules/note.js";
 import "./style.css"
 import { inboxPage } from "./pages/inbox/inboxPage.js";
 import { todayPage } from "./pages/today/todayPage.js";

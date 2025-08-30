@@ -1,4 +1,4 @@
-import { getAllTasks, getTodayTasks } from "../../modules/todo/todo";
+import { getAllTasks, getTodayTasks } from "../../modules/todo";
 
 function todayPage(projects) {
     const title = document.getElementById('title');

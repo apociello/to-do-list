@@ -1,4 +1,4 @@
-import { getAllTasks } from "../../modules/todo/todo.js";
+import { getAllTasks } from "../../modules/todo.js";
 
 
 function inboxPage(projects) {
