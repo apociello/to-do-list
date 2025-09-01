@@ -12,6 +12,38 @@ import { notePage } from "./pages/note/notePage.js";
 const allProjects = Project.projectList;
 const allNotes = Note.noteList;
 
+const inboxBtn = document.getElementById('inboxBtn');
+const todayBtn = document.getElementById('todayBtn');
+const thisWeekBtn = document.getElementById('weekBtn')
+
+inboxBtn.addEventListener('click', () => {
+  inboxBtn.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
+  inboxBtn.style.borderRadius = '5px';
+  todayBtn.style.backgroundColor = 'transparent';
+  thisWeekBtn.style.backgroundColor = 'transparent';
+
+  inboxPage(allProjects)
+})
+
+todayBtn.addEventListener('click', () => {
+  inboxBtn.style.backgroundColor = 'transparent';
+  todayBtn.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
+  todayBtn.style.borderRadius = '5px';
+  thisWeekBtn.style.backgroundColor = 'transparent';
+
+  todayPage(allProjects)
+})
+
+
+thisWeekBtn.addEventListener('click', () => {
+  inboxBtn.style.backgroundColor = 'transparent';
+  todayBtn.style.backgroundColor = 'transparent';
+  thisWeekBtn.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
+  thisWeekBtn.style.borderRadius = '5px';
+
+  thisWeekPage(allProjects)
+})
+
 
 
 
@@ -183,6 +215,6 @@ console.log(allProjects)
 //NOTES
 console.log(allNotes);
 
-inboxPage(allProjects)
+thisWeekPage(allProjects)
 
 
