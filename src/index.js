@@ -19,25 +19,25 @@ const thisWeekBtn = document.getElementById('weekBtn')
 inboxBtn.addEventListener('click', () => {
   inboxBtn.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
   inboxBtn.style.borderRadius = '5px';
-  todayBtn.style.backgroundColor = 'transparent';
-  thisWeekBtn.style.backgroundColor = 'transparent';
+  todayBtn.style.backgroundColor = '';
+  thisWeekBtn.style.backgroundColor = '';
 
   inboxPage(allProjects)
 })
 
 todayBtn.addEventListener('click', () => {
-  inboxBtn.style.backgroundColor = 'transparent';
+  inboxBtn.style.backgroundColor = '';
   todayBtn.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
   todayBtn.style.borderRadius = '5px';
-  thisWeekBtn.style.backgroundColor = 'transparent';
+  thisWeekBtn.style.backgroundColor = '';
 
   todayPage(allProjects)
 })
 
 
 thisWeekBtn.addEventListener('click', () => {
-  inboxBtn.style.backgroundColor = 'transparent';
-  todayBtn.style.backgroundColor = 'transparent';
+  inboxBtn.style.backgroundColor = '';
+  todayBtn.style.backgroundColor = '';
   thisWeekBtn.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
   thisWeekBtn.style.borderRadius = '5px';
 
