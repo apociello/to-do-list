@@ -47,11 +47,28 @@ thisWeekBtn.addEventListener('click', () => {
 //ADD PROJECT DIALOG
 const dialog = document.getElementById('project-dialog');
 
-const closeDialog = document.querySelector('.close');
-closeDialog.addEventListener('click', () => dialog.close());
-
 const openDialog = document.getElementById('open-dialog');
 openDialog.addEventListener('click', () => dialog.showModal());
+
+const form = document.querySelector('form');
+const input = document.getElementById('project-name')
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const projectName = input.value;
+  new Project(projectName);
+  console.log(allProjects)
+  form.reset();
+  dialog.close()
+})
+
+const closeDialog = document.querySelector('.close');
+closeDialog.addEventListener('click', (e) => {
+  e.preventDefault();
+  form.reset();
+  dialog.close();
+}) 
+
 
 
 
