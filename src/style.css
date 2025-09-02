@@ -40,7 +40,7 @@ body {
     padding-left: 0.5rem;
 }
 
-.sections {
+.sidebar-sections {
     display: flex;
     flex-direction: column;
     gap: 1.3rem
@@ -58,13 +58,13 @@ body {
     gap: 0.5rem
 }
 
-.section-line {
+.sidebar-line {
     display: flex;
     justify-content: space-between;
     padding: 0.4rem;
 }
 
-.section-line-right {
+.sidebar-line-right {
     padding-right: 0.5rem;
     display: none;
 }
@@ -78,19 +78,19 @@ body {
     background-color: rgba(255, 255, 255, 0.15);
 }
 
-.section-line-left {
+.sidebar-line-left {
     display: flex;
     gap: 0.5rem;
 }
 
 
-.section-line:hover {
+.sidebar-line:hover {
     cursor: pointer;
     background-color: rgba(255, 255, 255, 0.05);
     border-radius: 5px;
 }
 
-.section-line:hover .section-line-right {
+.sidebar-line:hover .sidebar-line-right {
     display: flex;
 }
 

@@ -1,3 +1,5 @@
+//display taks of the proyects in main
+
 function projectPage(project) {
     const title = document.getElementById('title');
         title.textContent = project.title;
