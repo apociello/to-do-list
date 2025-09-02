@@ -143,3 +143,53 @@ main {
 #main-div {
     font-size: 1.5rem;
 }
+
+
+
+/* ADD PROJECT DIALOG*/
+dialog {
+  width: 400px;
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1rem;
+  border-radius: 10px;
+  color: #0F172A;
+}
+
+dialog::backdrop {
+  background-color: rgba(2, 5, 11, 0.4);
+}
+dialog p {
+    font-size: 1.5rem;
+}
+input {
+  width: 100%;
+  font-size: 1.3rem;
+  border: 1.5px solid #dcdee1;
+  border-radius: 5px;
+  padding: 0.4rem;
+  margin: 1rem 0;
+  color: #5e5e5e;
+}
+
+input:focus {
+  outline: none; 
+  border-color: #285bad;
+}
+
+.dialog-btns {
+    display: flex;
+    gap: 1rem
+}
+
+.dialog-btns button {
+    font-size: 1.3rem;
+    background: #405983;
+    padding: 0.25rem 0.5rem;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    flex: 1;
+}
