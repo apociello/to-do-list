@@ -59,7 +59,7 @@ body {
 }
 
 .sidebar-line, 
-.file line {
+.file-line {
     display: flex;
     justify-content: space-between;
     padding: 0.4rem;
@@ -68,7 +68,6 @@ body {
 li.file-line{
     list-style: none;
     color: rgb(136, 136, 136);
-    padding: 0.4rem;
     font-size: 0.8em;
     margin-left: 2rem;
 }
@@ -78,12 +77,24 @@ li.file-line{
     display: none;
 }
 
+.file-line .sidebar-line-right {
+    display: flex;
+    gap: 0.5rem;
+    display: none;
+}
+
+.sidebar-line-right-icon {
+    width: 20px;
+    border-radius: 5px;
+}
+
 .sidebar-add-icon {
     width: 23px;
     border-radius: 5px;
 }
 
-.sidebar-add-icon:hover {
+.sidebar-add-icon:hover,
+.sidebar-line-right-icon:hover {
     background-color: rgba(255, 255, 255, 0.15);
 }
 
@@ -104,7 +115,8 @@ li.file-line .sidebar-line-left {
     border-radius: 5px;
 }
 
-.sidebar-line:hover .sidebar-line-right {
+.sidebar-line:hover .sidebar-line-right,
+.file-line:hover .sidebar-line-right {
     display: flex;
 }
 
