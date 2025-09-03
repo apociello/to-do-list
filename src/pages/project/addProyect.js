@@ -7,6 +7,8 @@ function sidebarAddProject(projectName) {
     const project = document.createElement('li');
     project.classList.add('file-line');
     
+    const leftSideDiv = document.createElement('div');
+    leftSideDiv.classList.add('sidebar-line-left')
     const image = document.createElement("img");
     image.src = fileIcon;
     image.alt = 'written file icon';
@@ -14,7 +16,8 @@ function sidebarAddProject(projectName) {
     const projectTitle = document.createElement('p');
     projectTitle.textContent = projectName;
 
-    project.append(image, projectTitle)
+    leftSideDiv.append(image, projectTitle)
+    project.append(leftSideDiv)
     projectList.append(project)
 }
 

@@ -99,6 +99,8 @@ body {
     gap: 0.2rem;
     padding: 0.2rem;
     padding-left: 2rem;
+    display: flex;
+    justify-content: space-between;
 }
 
 .sidebar-icon {
@@ -119,7 +121,6 @@ li {
     padding: 0.25rem;
     padding-left: 3rem;
     font-size: 0.8em;
-    
 }
 
 .sidebar-footer {
@@ -193,3 +194,5 @@ input:focus {
     border-radius: 5px;
     flex: 1;
 }
+
+/* ADD PROJECT DIALOG */
