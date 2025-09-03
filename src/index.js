@@ -8,6 +8,7 @@ import { todayPage } from "./pages/today/todayPage.js";
 import { thisWeekPage } from "./pages/this_week/thisWeekPage.js";
 import { projectPage } from "./pages/project/projectPage.js";
 import { notePage } from "./pages/note/notePage.js";
+import { sidebarAddProject } from "./pages/project/addProyect.js";
 
 const allProjects = Project.projectList;
 const allNotes = Note.noteList;
@@ -56,6 +57,7 @@ const input = document.getElementById('project-name')
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   const projectName = input.value;
+  sidebarAddProject(projectName);
   new Project(projectName);
   console.log(allProjects)
   form.reset();
@@ -167,7 +169,7 @@ const project1 = new Project("Personal Development");
 const task1 = new Task(
   "Learn JavaScript",
   "Review classes and modules for the project",
-  "2025-08-30",
+  "2025-09-5",
   "High",
   false
 );
@@ -175,7 +177,7 @@ const task1 = new Task(
 const task2 = new Task(
   "Workout",
   "30 minutes of cardio and stretching",
-  "2025-08-21",
+  "2025-09-21",
   "Medium",
   false
 );
@@ -183,7 +185,7 @@ const task2 = new Task(
 const task3 = new Task(
   "Read a book",
   "Finish reading 50 pages of 'Atomic Habits'",
-  "2025-09-02",
+  "2025-09-03",
   "Low",
   false
 );
@@ -197,7 +199,7 @@ const project2 = new Project("Work & Career");
 const task4 = new Task(
   "Prepare Presentation",
   "Create slides for Monday's meeting",
-  "2025-08-27",
+  "2025-09-7",
   "High",
   false
 );
@@ -205,7 +207,7 @@ const task4 = new Task(
 const task5 = new Task(
   "Update Resume",
   "Add recent projects and skills",
-  "2025-09-01",
+  "2025-09-04",
   "Medium",
   false
 );
@@ -213,7 +215,7 @@ const task5 = new Task(
 const task6 = new Task(
   "Networking",
   "Send follow-up emails to 3 contacts",
-  "2025-08-20",
+  "2025-09-27",
   "Low",
   false
 );
