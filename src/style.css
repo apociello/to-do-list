@@ -58,10 +58,19 @@ body {
     gap: 0.5rem
 }
 
-.sidebar-line {
+.sidebar-line, 
+.file line {
     display: flex;
     justify-content: space-between;
     padding: 0.4rem;
+}
+
+li.file-line{
+    list-style: none;
+    color: rgb(136, 136, 136);
+    padding: 0.4rem;
+    font-size: 0.8em;
+    margin-left: 2rem;
 }
 
 .sidebar-line-right {
@@ -83,8 +92,13 @@ body {
     gap: 0.5rem;
 }
 
+li.file-line .sidebar-line-left {
+    gap: 0.3rem
+}
 
-.sidebar-line:hover {
+
+.sidebar-line:hover,
+.file-line:hover {
     cursor: pointer;
     background-color: rgba(255, 255, 255, 0.05);
     border-radius: 5px;
@@ -92,15 +106,6 @@ body {
 
 .sidebar-line:hover .sidebar-line-right {
     display: flex;
-}
-
-.file-line {
-    display: flex;
-    gap: 0.2rem;
-    padding: 0.2rem;
-    padding-left: 2rem;
-    display: flex;
-    justify-content: space-between;
 }
 
 .sidebar-icon {
@@ -113,14 +118,6 @@ body {
 
 .file-icon {
     width: 24px;
-}
-
-li {
-    list-style: none;
-    color: rgb(136, 136, 136);
-    padding: 0.25rem;
-    padding-left: 3rem;
-    font-size: 0.8em;
 }
 
 .sidebar-footer {
