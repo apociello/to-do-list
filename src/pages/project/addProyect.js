@@ -8,6 +8,7 @@ function sidebarAddProject(projectName) {
 
     const project = document.createElement('li');
     project.classList.add('file-line');
+    project.dataset.id = projectName;
     
     const leftSideDiv = document.createElement('div');
     leftSideDiv.classList.add('sidebar-line-left')
@@ -26,12 +27,14 @@ function sidebarAddProject(projectName) {
     icon2.alt = 'pencil rename icon';
     icon2.classList.add('sidebar-line-right-icon');
     icon2.classList.add('open-rename-dialog');
-    const renameDivDialog = document.getElementById('rename-project-dialog');
+    const renameDialog = document.getElementById('rename-project-dialog');
     const inputRename = document.getElementById('project-rename-input');
 
-    icon2.addEventListener('click', () => {
-    inputRename.value = 'Notch';
-    renameDivDialog.showModal();
+    icon2.addEventListener('click', (e) => {
+    const projectLi = e.target.closest('.file-line');
+    inputRename.value = projectLi.dataset.id;
+    renameDialog.dataset.dialogId = inputRename.value;
+    renameDialog.showModal();
     });
 
     const icon3 = document.createElement("img");

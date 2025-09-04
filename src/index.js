@@ -72,20 +72,51 @@ closeDialog.addEventListener('click', (e) => {
 }) 
 
 // RENAME PROJECT DIALOG 
-const renameDivDialog = document.getElementById('rename-project-dialog');
+const renameDialog = document.getElementById('rename-project-dialog');
 const inputRename = document.getElementById('project-rename-input');
 
-const closeRenameDialog = document.querySelector('.close-rename');
-closeRenameDialog.addEventListener('click', () => renameDivDialog.close());
-
 const openRenameDialog = document.querySelectorAll('.open-rename-dialog');
+
 openRenameDialog.forEach((btn) => {
-  btn.addEventListener('click', () => {
-  inputRename.value = 'Notch'
-  renameDivDialog.showModal();
+  btn.addEventListener('click', (e) => {
+  const projectLi = e.target.closest('.file-line');
+  inputRename.value = projectLi.dataset.id;
+  renameDialog.dataset.dialogId = inputRename.value;
+  renameDialog.showModal();
   })
 })
 
+const renameForm = document.querySelector('.rename-form');
+
+renameForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  let oldProjectId = renameDialog.dataset.dialogId;
+  const projectLi = document.querySelector(`[data-id="${oldProjectId}"]`)
+  const p = projectLi.querySelector('p');
+
+
+  allProjects.forEach((project) => {
+    if (project.title === oldProjectId) {
+      project.title = inputRename.value;
+    }
+  })
+  console.log(allProjects)
+
+
+  projectLi.dataset.id = inputRename.value;
+  oldProjectId = inputRename.value;
+  p.textContent = inputRename.value;
+
+  form.reset();
+  renameDialog.close()
+})
+
+const closeRenameDialog = document.querySelector('.close-rename');
+closeRenameDialog.addEventListener('click', (e) => {
+  e.preventDefault();
+  form.reset();
+  renameDialog.close();
+}) 
 
 
 
