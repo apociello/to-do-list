@@ -20,10 +20,19 @@ function sidebarAddProject(projectName) {
 
     const rightSideDiv = document.createElement('div');
     rightSideDiv.classList.add('sidebar-line-right')
+
     const icon2 = document.createElement("img");
     icon2.src = renameIcon;
     icon2.alt = 'pencil rename icon';
-    icon2.classList.add('sidebar-line-right-icon')
+    icon2.classList.add('sidebar-line-right-icon');
+    icon2.classList.add('open-rename-dialog');
+    const renameDivDialog = document.getElementById('rename-project-dialog');
+    const inputRename = document.getElementById('project-rename-input');
+
+    icon2.addEventListener('click', () => {
+    inputRename.value = 'Notch';
+    renameDivDialog.showModal();
+    });
 
     const icon3 = document.createElement("img");
     icon3.src = trashIcon;

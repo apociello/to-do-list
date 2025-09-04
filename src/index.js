@@ -71,6 +71,20 @@ closeDialog.addEventListener('click', (e) => {
   dialog.close();
 }) 
 
+// RENAME PROJECT DIALOG 
+const renameDivDialog = document.getElementById('rename-project-dialog');
+const inputRename = document.getElementById('project-rename-input');
+
+const closeRenameDialog = document.querySelector('.close-rename');
+closeRenameDialog.addEventListener('click', () => renameDivDialog.close());
+
+const openRenameDialog = document.querySelectorAll('.open-rename-dialog');
+openRenameDialog.forEach((btn) => {
+  btn.addEventListener('click', () => {
+  inputRename.value = 'Notch'
+  renameDivDialog.showModal();
+  })
+})
 
 
 

@@ -72,7 +72,7 @@
                                     </div>
 
                                     <div class="sidebar-line-right">
-                                        <img src="./images/edit.svg" alt="pencil rename icon" class="sidebar-line-right-icon">
+                                        <img src="./images/edit.svg" alt="pencil rename icon" class="sidebar-line-right-icon open-rename-dialog">
                                         <img src="./images/trash.svg" alt="trash delete icon" class="sidebar-line-right-icon">
                                     </div>
                                 </li>
@@ -83,7 +83,7 @@
                                     </div>
 
                                     <div class="sidebar-line-right">
-                                        <img src="./images/edit.svg" alt="pencil rename icon" class="sidebar-line-right-icon">
+                                        <img src="./images/edit.svg" alt="pencil rename icon" class="sidebar-line-right-icon open-rename-dialog" >
                                         <img src="./images/trash.svg" alt="trash delete icon" class="sidebar-line-right-icon">
                                     </div>
                                 </li>
@@ -113,7 +113,7 @@
                                     </div>
 
                                     <div class="sidebar-line-right">
-                                        <img src="./images/edit.svg" alt="pencil rename icon" class="sidebar-line-right-icon">
+                                        <img src="./images/edit.svg" alt="pencil rename icon" class="sidebar-line-right-icon open-rename-dialog">
                                         <img src="./images/trash.svg" alt="trash delete icon" class="sidebar-line-right-icon">
                                     </div>
                                 </li>
@@ -124,7 +124,7 @@
                                     </div>
 
                                     <div class="sidebar-line-right">
-                                        <img src="./images/edit.svg" alt="pencil rename icon" class="sidebar-line-right-icon">
+                                        <img src="./images/edit.svg" alt="pencil rename icon" class="sidebar-line-right-icon open-rename-dialog">
                                         <img src="./images/trash.svg" alt="trash delete icon" class="sidebar-line-right-icon">
                                     </div>
                                     
@@ -155,6 +155,21 @@
                 <div class="dialog-btns">
                     <button type="submit" class="add">Add</button>
                     <button type="button" class="close">Close</button>
+                </div>
+                
+            </form>
+        </dialog>
+
+        <dialog id="rename-project-dialog">
+            <form action="" method="post" autocomplete="off">
+                <div>
+                    <p>Rename Project</p>
+                    <input type="text" name="project-rename" id="project-rename-input" required>
+                </div>
+
+                <div class="dialog-btns">
+                    <button type="submit" class="save">Save</button>
+                    <button type="button" class="close-rename">Cancel</button>
                 </div>
                 
             </form>
