@@ -11,6 +11,7 @@ import { notePage } from "./pages/note/notePage.js";
 import { sidebarAddProject } from "./pages/project/addProyect.js";
 
 const allProjects = Project.projectList;
+export default allProjects;
 const allNotes = Note.noteList;
 
 const inboxBtn = document.getElementById('inboxBtn');
@@ -75,7 +76,7 @@ closeDialog.addEventListener('click', (e) => {
 const renameDialog = document.getElementById('rename-project-dialog');
 const inputRename = document.getElementById('project-rename-input');
 
-const openRenameDialog = document.querySelectorAll('.open-rename-dialog');
+/* const openRenameDialog = document.querySelectorAll('.open-rename-dialog');
 
 openRenameDialog.forEach((btn) => {
   btn.addEventListener('click', (e) => {
@@ -84,7 +85,7 @@ openRenameDialog.forEach((btn) => {
   renameDialog.dataset.dialogId = inputRename.value;
   renameDialog.showModal();
   })
-})
+}) */
 
 const renameForm = document.querySelector('.rename-form');
 
@@ -117,6 +118,24 @@ closeRenameDialog.addEventListener('click', (e) => {
   form.reset();
   renameDialog.close();
 }) 
+
+// DELETE PROJECT
+/* const deleteProjectBtn = document.querySelectorAll('.delete-project');
+deleteProjectBtn.forEach((btn) => {
+btn.addEventListener('click', (e) => {
+  const projectLi = e.target.closest('li');
+  const projectName = projectLi.dataset.id
+  console.log(projectLi)
+  console.log(projectName)
+
+  allProjects.forEach((project) => {
+    if (project.title === projectName) {
+      Project.deleteProject(project);
+      projectLi.remove()
+    }
+  })
+})
+}) */
 
 
 

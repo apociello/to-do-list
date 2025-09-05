@@ -3,6 +3,10 @@ import fileIcon from "../../images/file.svg";
 import renameIcon from "../../images/edit.svg";
 import trashIcon from "../../images/trash.svg"
 
+//TEMPORAL CHAPUZA
+import allProjects from "../../index.js"
+import { Project } from "../../modules/project.js"
+
 function sidebarAddProject(projectName) {
     const projectList = document.querySelector('.project-list');
 
@@ -40,7 +44,23 @@ function sidebarAddProject(projectName) {
     const icon3 = document.createElement("img");
     icon3.src = trashIcon;
     icon3.alt = 'trash delete icon';
-    icon3.classList.add('sidebar-line-right-icon')
+    icon3.classList.add('sidebar-line-right-icon');
+    icon3.classList.add('delete-project');
+    
+    const projects = allProjects;
+    icon3.addEventListener('click', (e) => {
+      const projectLi = e.target.closest('li');
+      const projectName = projectLi.dataset.id
+    
+      projects.forEach((project) => {
+        if (project.title === projectName) {
+          Project.deleteProject(project);
+          projectLi.remove()
+        }
+      })
+
+      console.log(projects)
+    })
 
     leftSideDiv.append(icon1, projectTitle);
     rightSideDiv.append(icon2,icon3)
