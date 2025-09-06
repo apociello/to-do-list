@@ -1,20 +1,16 @@
-import { getAllTasks } from "../../modules/todo.js";
-
-
-function inboxPage(projects) {
+function projectPage(project) {
     const title = document.getElementById('title');
-    title.textContent = 'Inbox'
-
+    title.textContent = project.title;
+    
     const mainDiv = document.getElementById('main-div');
     mainDiv.textContent = '';
-    const allTasks = getAllTasks(projects);
-
-    allTasks.forEach((task) => {
+    const tasks = project.taskList;
+    
+    tasks.forEach((task) => {
         const taskp = document.createElement('p');
         taskp.textContent = task.title;
         mainDiv.append(taskp)
     })
-
 }
 
-export {inboxPage}
+export {projectPage}

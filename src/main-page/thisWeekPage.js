@@ -1,4 +1,4 @@
-import { getAllTasks, getWeekTasks } from "../../modules/todo";
+import { getAllTasks, getWeekTasks } from "../modules/todo";
 
 function thisWeekPage(projects) {
     const title = document.getElementById('title');

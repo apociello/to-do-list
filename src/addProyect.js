@@ -1,11 +1,9 @@
-// Add project to the sidebar
-import fileIcon from "../../images/file.svg";
-import renameIcon from "../../images/edit.svg";
-import trashIcon from "../../images/trash.svg"
-
-//TEMPORAL CHAPUZA
-import allProjects from "../../index.js"
-import { Project } from "../../modules/project.js"
+// ADD PROJECT TO THE SIDEBAR
+import { Project } from "./modules/project.js";
+import { allProjects } from "./projectData.js";
+import fileIcon from "./images/file.svg";
+import renameIcon from "./images/edit.svg";
+import trashIcon from "./images/trash.svg"
 
 function sidebarAddProject(projectName) {
     const projectList = document.querySelector('.project-list');
@@ -15,7 +13,8 @@ function sidebarAddProject(projectName) {
     project.dataset.id = projectName;
     
     const leftSideDiv = document.createElement('div');
-    leftSideDiv.classList.add('sidebar-line-left')
+    leftSideDiv.classList.add('sidebar-line-left');
+
     const icon1 = document.createElement("img");
     icon1.src = fileIcon;
     icon1.alt = 'written file icon';
@@ -31,15 +30,18 @@ function sidebarAddProject(projectName) {
     icon2.alt = 'pencil rename icon';
     icon2.classList.add('sidebar-line-right-icon');
     icon2.classList.add('open-rename-dialog');
+
+    // RENAME PROJECT EVENT
     const renameDialog = document.getElementById('rename-project-dialog');
     const inputRename = document.getElementById('project-rename-input');
 
     icon2.addEventListener('click', (e) => {
-    const projectLi = e.target.closest('.file-line');
-    inputRename.value = projectLi.dataset.id;
-    renameDialog.dataset.dialogId = inputRename.value;
-    renameDialog.showModal();
+      const projectLi = e.target.closest('.file-line');
+      inputRename.value = projectLi.dataset.id;
+      renameDialog.dataset.dialogId = inputRename.value;
+      renameDialog.showModal();
     });
+
 
     const icon3 = document.createElement("img");
     icon3.src = trashIcon;
@@ -47,10 +49,11 @@ function sidebarAddProject(projectName) {
     icon3.classList.add('sidebar-line-right-icon');
     icon3.classList.add('delete-project');
     
-    const projects = allProjects;
+    // DELETE PROJECT EVENT
+    const projects = allProjects; 
     icon3.addEventListener('click', (e) => {
       const projectLi = e.target.closest('li');
-      const projectName = projectLi.dataset.id
+      const projectName = projectLi.dataset.id;
     
       projects.forEach((project) => {
         if (project.title === projectName) {
@@ -58,7 +61,6 @@ function sidebarAddProject(projectName) {
           projectLi.remove()
         }
       })
-
       console.log(projects)
     })
 

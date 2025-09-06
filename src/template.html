@@ -59,7 +59,7 @@
                                 </div>
 
                                 <div class="sidebar-line-right">
-                                    <img src="./images/add.svg" alt="add icon" id="open-dialog" class="sidebar-add-icon">
+                                    <img src="./images/add.svg" alt="add icon" id="open-add-project-dialog" class="sidebar-add-icon">
                                 </div>
                                 
                             </div>
@@ -145,8 +145,8 @@
             </div>
         </main>
 
-        <dialog id="project-dialog">
-            <form action="" method="post" autocomplete="off">
+        <dialog id="add-project-dialog">
+            <form action="" method="post" autocomplete="off" class="add-project-form">
                 <div>
                     <p>New Project</p>
                     <input type="text" name="project-name" id="project-name" placeholder="Project name" required>
@@ -154,7 +154,7 @@
 
                 <div class="dialog-btns">
                     <button type="submit" class="add">Add</button>
-                    <button type="button" class="close">Close</button>
+                    <button type="button" class="close-add-project-dialog">Close</button>
                 </div>
                 
             </form>
