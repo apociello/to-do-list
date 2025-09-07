@@ -15,8 +15,8 @@ export function initDialogEvents() {
     addProjectForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const projectName = addProjectInput.value;
-        sidebarAddProject(projectName);
         new Project(projectName);
+        sidebarAddProject(projectName);
         console.log(allProjects) 
         addProjectForm.reset();
         addProjectDialog.close()

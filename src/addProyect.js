@@ -3,7 +3,8 @@ import { Project } from "./modules/project.js";
 import { allProjects } from "./projectData.js";
 import fileIcon from "./images/file.svg";
 import renameIcon from "./images/edit.svg";
-import trashIcon from "./images/trash.svg"
+import trashIcon from "./images/trash.svg";
+import { initProjectEvents } from "./initProjectEvents.js";
 
 function sidebarAddProject(projectName) {
     const projectList = document.querySelector('.project-list');
@@ -68,6 +69,10 @@ function sidebarAddProject(projectName) {
     rightSideDiv.append(icon2,icon3)
     project.append(leftSideDiv, rightSideDiv)
     projectList.append(project)
+
+    // PROJECT DISPLAY
+    initProjectEvents(project, projectName);
+      
 }
 
 export {sidebarAddProject}
