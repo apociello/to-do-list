@@ -1,6 +1,7 @@
 import { Project } from "./modules/project.js";
 import { allProjects } from "./projectData.js";
 import { sidebarAddProject } from "./addProyect.js";
+import { projectPage } from "./main-page/projectPage.js";
 
 
 export function initDialogEvents() {
@@ -51,6 +52,9 @@ export function initDialogEvents() {
         projectLi.dataset.id = inputRename.value;
         oldProjectId = inputRename.value;
         p.textContent = inputRename.value;
+
+        //RERENDER MAIN-DIV
+        projectPage(inputRename.value);
 
         renameForm.reset();
         renameDialog.close()
