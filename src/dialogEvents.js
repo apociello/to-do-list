@@ -49,12 +49,15 @@ export function initDialogEvents() {
         })
         console.log(allProjects)
 
+            //RERENDER MAIN-DIV
+        const mainDivTitle = document.getElementById('title').textContent;
+        if (mainDivTitle === oldProjectId) {
+            projectPage(inputRename.value);
+        }
+        
         projectLi.dataset.id = inputRename.value;
         oldProjectId = inputRename.value;
         p.textContent = inputRename.value;
-
-        //RERENDER MAIN-DIV
-        projectPage(inputRename.value);
 
         renameForm.reset();
         renameDialog.close()

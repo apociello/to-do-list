@@ -8,6 +8,9 @@ export function initProjectEvents(newProjectBtn, projectName) {
     const allProjectsBtns = document.querySelectorAll('.file-line');
 
     newProjectBtn.addEventListener('click', () => {
+
+        const currentProjectName = newProjectBtn.dataset.id;
+
         const dinamicAllProjectBtns = document.querySelectorAll('.file-line');
         if (dinamicAllProjectBtns) {
             dinamicAllProjectBtns.forEach((projectBtn) => {
@@ -21,7 +24,7 @@ export function initProjectEvents(newProjectBtn, projectName) {
         newProjectBtn.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
         newProjectBtn.style.borderRadius = '5px';
 
-        projectPage(projectName)
+        projectPage(currentProjectName);
     })
 
     inboxBtn.addEventListener('click', () => {
