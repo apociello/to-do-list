@@ -199,4 +199,14 @@ input:focus {
     flex: 1;
 }
 
+.project-error {
+    font-size: 1rem;
+    color: red;
+    margin-bottom: 1rem;
+}
+
+.hidden {
+    display: none;
+}
+
 /* ADD PROJECT DIALOG */

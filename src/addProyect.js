@@ -2,6 +2,7 @@
 import fileIconImg from "./images/file.svg";
 import { initProjectEvents } from "./initProjectEvents.js";
 import { renameProjectBtn, deleteProjectBtn } from "./projectBtns.js";
+import { allProjects } from "./projectData.js";
 
 function sidebarAddProject(projectName) {
     const projectList = document.querySelector('.project-list');
@@ -36,4 +37,10 @@ function sidebarAddProject(projectName) {
       
 }
 
-export {sidebarAddProject}
+function projectExits(projectName) {
+    return allProjects.some(
+    project => project.title.toLowerCase() === projectName.toLowerCase()
+  );
+}
+
+export {sidebarAddProject, projectExits}

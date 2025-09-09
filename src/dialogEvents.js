@@ -2,6 +2,7 @@ import { Project } from "./modules/project.js";
 import { allProjects } from "./projectData.js";
 import { sidebarAddProject } from "./addProyect.js";
 import { projectPage } from "./main-page/projectPage.js";
+import { projectExits } from "./addProyect.js";
 
 
 export function initDialogEvents() {
@@ -11,30 +12,40 @@ export function initDialogEvents() {
     const addProjectForm = document.querySelector('.add-project-form');
     const addProjectInput = document.getElementById('project-name')
     const openAddProjectDialog = document.getElementById('open-add-project-dialog');
+    const addError = document.getElementById('add-error');
 
     openAddProjectDialog.addEventListener('click', () => addProjectDialog.showModal());
     addProjectForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const projectName = addProjectInput.value;
-        new Project(projectName);
-        sidebarAddProject(projectName);
-        console.log(allProjects) 
-        addProjectForm.reset();
-        addProjectDialog.close()
+
+        
+        if (projectExits(projectName)) {
+            addError.classList.remove('hidden')
+        } else {
+            addError.classList.add('hidden')
+            new Project(projectName);
+            sidebarAddProject(projectName);
+            console.log(allProjects) 
+            addProjectForm.reset();
+            addProjectDialog.close()
+        }
+        
     })
 
     const closeAddProjectDialog = document.querySelector('.close-add-project-dialog');
     closeAddProjectDialog.addEventListener('click', (e) => {
         e.preventDefault();
         addProjectForm.reset();
+        addError.classList.add('hidden');
         addProjectDialog.close();
     }) 
-
 
     // RENAME PROJECT DIALOG 
     const renameDialog = document.getElementById('rename-project-dialog');
     const inputRename = document.getElementById('project-rename-input');
     const renameForm = document.querySelector('.rename-form');
+    const renameError = document.getElementById('rename-error')
 
     renameForm.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -42,33 +53,38 @@ export function initDialogEvents() {
         const projectLi = document.querySelector(`[data-id="${oldProjectId}"]`)
         const p = projectLi.querySelector('p');
 
-        allProjects.forEach((project) => {
+        if (inputRename.value.toLowerCase() === oldProjectId.toLowerCase() || !projectExits(inputRename.value) ) {
+            renameError.classList.add('hidden')
+            allProjects.forEach((project) => {
             if (project.title === oldProjectId) {
-            project.title = inputRename.value;
+                project.title = inputRename.value;
             }
-        })
-        console.log(allProjects)
+            })
+            console.log(allProjects)
 
-            //RERENDER MAIN-DIV
-        const mainDivTitle = document.getElementById('title').textContent;
-        if (mainDivTitle === oldProjectId) {
-            projectPage(inputRename.value);
+                //RERENDER MAIN-DIV
+            const mainDivTitle = document.getElementById('title').textContent;
+            if (mainDivTitle === oldProjectId) {
+                projectPage(inputRename.value);
+            }
+            
+            projectLi.dataset.id = inputRename.value;
+            oldProjectId = inputRename.value;
+            p.textContent = inputRename.value;
+
+            renameForm.reset();
+            renameDialog.close()
+        } else if (projectExits(inputRename.value)) {
+            renameError.classList.remove('hidden');
         }
-        
-        projectLi.dataset.id = inputRename.value;
-        oldProjectId = inputRename.value;
-        p.textContent = inputRename.value;
-
-        renameForm.reset();
-        renameDialog.close()
     })
 
     const closeRenameDialog = document.querySelector('.close-rename');
     closeRenameDialog.addEventListener('click', (e) => {
         e.preventDefault();
         renameForm.reset();
+        renameError.classList.add('hidden')
         renameDialog.close();
     }) 
 
 }
-
