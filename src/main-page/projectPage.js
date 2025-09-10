@@ -7,16 +7,20 @@ function projectPage(projectName) {
 
             const title = document.getElementById('title');
             title.textContent = project.title;
-            
+
+            const addTaskBtn = document.querySelector('.add-task-btn')
+            addTaskBtn.classList.remove('hidden')
             const mainDiv = document.getElementById('main-div');
-            mainDiv.textContent = 'NO HAY TASKS!';
+            mainDiv.textContent = ''
             const tasks = project.taskList;
-            
-            tasks.forEach((task) => {
+
+            if (tasks.length !== 0) {
+                tasks.forEach((task) => {
                 const taskp = document.createElement('p');
                 taskp.textContent = task.title;
                 mainDiv.append(taskp)
             })
+            } 
         }
     })
 }

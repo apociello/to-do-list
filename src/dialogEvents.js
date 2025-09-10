@@ -13,12 +13,12 @@ export function initDialogEvents() {
     const addProjectInput = document.getElementById('project-name')
     const openAddProjectDialog = document.getElementById('open-add-project-dialog');
     const addError = document.getElementById('add-error');
+    const closeAddProjectDialog = document.querySelector('.close-add-project-dialog');
 
     openAddProjectDialog.addEventListener('click', () => addProjectDialog.showModal());
     addProjectForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const projectName = addProjectInput.value;
-
         
         if (projectExits(projectName)) {
             addError.classList.remove('hidden')
@@ -30,10 +30,8 @@ export function initDialogEvents() {
             addProjectForm.reset();
             addProjectDialog.close()
         }
-        
     })
 
-    const closeAddProjectDialog = document.querySelector('.close-add-project-dialog');
     closeAddProjectDialog.addEventListener('click', (e) => {
         e.preventDefault();
         addProjectForm.reset();
@@ -46,6 +44,7 @@ export function initDialogEvents() {
     const inputRename = document.getElementById('project-rename-input');
     const renameForm = document.querySelector('.rename-form');
     const renameError = document.getElementById('rename-error')
+    const closeRenameDialog = document.querySelector('.close-rename');
 
     renameForm.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -79,7 +78,6 @@ export function initDialogEvents() {
         }
     })
 
-    const closeRenameDialog = document.querySelector('.close-rename');
     closeRenameDialog.addEventListener('click', (e) => {
         e.preventDefault();
         renameForm.reset();
@@ -87,4 +85,23 @@ export function initDialogEvents() {
         renameDialog.close();
     }) 
 
+
+    //ADD TASK DIALOG 
+    const addTaskDialog = document.getElementById('add-task-dialog');
+    const addTaskForm = document.querySelector('.add-task-form');
+    const openAddTaskDialog = document.querySelector('.add-task-btn');
+    const closeAddTaskDialog = document.querySelector('.close-add-task');
+
+    openAddTaskDialog.addEventListener('click', () => addTaskDialog.showModal())
+    addTaskForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        addTaskForm.reset();
+        addTaskDialog.close();
+    } )
+
+    closeAddTaskDialog.addEventListener('click', (e) => {
+        e.preventDefault();
+        addTaskForm.reset();
+        addTaskDialog.close();
+    }) 
 }

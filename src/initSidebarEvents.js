@@ -7,13 +7,15 @@ export function initSidebarEvents() {
 
     const inboxBtn = document.getElementById('inboxBtn');
     const todayBtn = document.getElementById('todayBtn');
-    const thisWeekBtn = document.getElementById('weekBtn')
+    const thisWeekBtn = document.getElementById('weekBtn');
+    const addTaskBtn = document.querySelector('.add-task-btn')
 
     inboxBtn.addEventListener('click', () => {
         inboxBtn.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
         inboxBtn.style.borderRadius = '5px';
         todayBtn.style.backgroundColor = '';
         thisWeekBtn.style.backgroundColor = '';
+        addTaskBtn.classList.add('hidden')
 
         inboxPage(allProjects)
     })
@@ -23,6 +25,7 @@ export function initSidebarEvents() {
         todayBtn.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
         todayBtn.style.borderRadius = '5px';
         thisWeekBtn.style.backgroundColor = '';
+        addTaskBtn.classList.add('hidden')
 
         todayPage(allProjects)
     })
@@ -32,6 +35,7 @@ export function initSidebarEvents() {
         todayBtn.style.backgroundColor = '';
         thisWeekBtn.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
         thisWeekBtn.style.borderRadius = '5px';
+        addTaskBtn.classList.add('hidden')
 
         thisWeekPage(allProjects)
     })
