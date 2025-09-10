@@ -52,6 +52,10 @@ body {
     gap: 0.5rem
 }
 
+.create .sidebar-line:hover {
+    cursor: default;
+}
+
 .sidebar-line, 
 .file-line {
     display: flex;
@@ -84,6 +88,7 @@ li.file-line{
 }
 
 .sidebar-add-icon {
+    cursor: pointer;
     width: 23px;
     border-radius: 5px;
 }
