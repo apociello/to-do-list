@@ -16,9 +16,29 @@ function projectPage(projectName) {
 
             if (tasks.length !== 0) {
                 tasks.forEach((task) => {
-                const taskp = document.createElement('p');
-                taskp.textContent = task.title;
-                mainDiv.append(taskp)
+                    const taskDiv = document.createElement('div');
+                    taskDiv.classList.add('task-div')
+
+                    const taskDivLeft = document.createElement('div')
+                    taskDivLeft.classList.add('task-div-left');
+
+                    const taskDivRight = document.createElement('div')
+                    taskDivRight.classList.add('task-div-right');
+
+
+                    //const checkBox = document.createElement('input');
+                    //checkBox.type = 'checkbox';
+
+                    const taskTitle = document.createElement('p')
+                    taskTitle.textContent = task.title;
+
+                    const dueDate = document.createElement('small');
+                    dueDate.textContent = task.duedate;
+                    
+                    taskDivLeft.append(taskTitle);
+                    taskDivRight.append(dueDate);
+                    taskDiv.append(taskDivLeft, taskDivRight)
+                    mainDiv.append(taskDiv)
             })
             } 
         }

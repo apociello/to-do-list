@@ -279,3 +279,25 @@ input[type="date"],
 #add-task-dialog .dialog-btns {
     margin-top: 1rem;
 }
+
+/* TASK DISPLAY */
+
+#main-div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.task-div {
+    background-color:#1f4e9a;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+}
+
+.task-div-left {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
