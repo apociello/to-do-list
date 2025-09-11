@@ -8,15 +8,17 @@ export const allProjects = Project.projectList;
 // DEFAULT PROJECTS IN THE APP
 import { Task } from "./modules/task.js"
 import { getAllTasks, getTodayTasks, getWeekTasks } from "./modules/todo.js";
-import { Note } from "./modules/note.js"
+import { Note } from "./modules/note.js";
+import { sidebarAddProject } from "./addProyect.js";
 
 export function logDefaultProjects() {
     const project1 = new Project("Personal Development");
+    sidebarAddProject('Personal Development');
 
     const task1 = new Task(
     "Learn JavaScript",
     "Review classes and modules for the project",
-    "2025-09-11",
+    "2025-09-12",
     "High",
     false
     );
@@ -42,6 +44,7 @@ export function logDefaultProjects() {
     project1.addTask(task3)
 
     const project2 = new Project("Work & Career");
+    sidebarAddProject('Work & Career');
 
     const task4 = new Task(
     "Prepare Presentation",
