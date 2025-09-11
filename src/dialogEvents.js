@@ -3,6 +3,7 @@ import { allProjects } from "./projectData.js";
 import { sidebarAddProject } from "./addProyect.js";
 import { projectPage } from "./main-page/projectPage.js";
 import { projectExits } from "./addProyect.js";
+import { Task } from "./modules/task.js";
 
 
 export function initDialogEvents() {
@@ -93,8 +94,30 @@ export function initDialogEvents() {
     const closeAddTaskDialog = document.querySelector('.close-add-task');
 
     openAddTaskDialog.addEventListener('click', () => addTaskDialog.showModal())
+
     addTaskForm.addEventListener('submit', (e) => {
         e.preventDefault();
+
+        // get form data
+        const title = addTaskForm.querySelector('#Title').value;
+        const description = addTaskForm.querySelector('#description').value;
+        const dueDate = addTaskForm.querySelector('#date').value;
+        const priority = addTaskForm.querySelector('#priority').value;
+
+        const newTask = new Task(title, description, dueDate, priority)
+        console.log(newTask)
+
+        const mainDivTitle = document.getElementById('title').textContent;
+        allProjects.forEach((project) => {
+            if (project.title === mainDivTitle) {
+                project.addTask(newTask);
+                projectPage(project.title)
+                console.log(project.taskList);
+                console.log(allProjects)
+            }
+        })
+
+
         addTaskForm.reset();
         addTaskDialog.close();
     } )
