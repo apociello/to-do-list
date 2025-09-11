@@ -41,7 +41,5 @@ export function initSidebarEvents() {
     })
 
     // DEFAULT DISPLAY
-    inboxPage(allProjects);
-    inboxBtn.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
-    inboxBtn.style.borderRadius = '5px';
+    inboxBtn.click()
 }

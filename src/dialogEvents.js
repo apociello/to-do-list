@@ -104,7 +104,7 @@ export function initDialogEvents() {
         const dueDate = addTaskForm.querySelector('#date').value;
         const priority = addTaskForm.querySelector('#priority').value;
 
-        const newTask = new Task(title, description, dueDate, priority)
+        const newTask = new Task(title, description, dueDate, priority, false)
         console.log(newTask)
 
         const mainDivTitle = document.getElementById('title').textContent;
