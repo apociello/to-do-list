@@ -148,6 +148,7 @@ main {
 #title {
     align-self: center;
     font-size: 3rem;
+    font-weight: 600;
 }
 
 #main-div {
@@ -241,12 +242,18 @@ dialog#add-task-dialog {
 
 .add-task-btn {
     font-size: 1.3rem;
-    background: #405983;
+    background-color: #38BDF8;
+    color: #0F172A;
+    transition: all 0.2s ease;
+    font-weight: 600;
     padding: 0.4rem 0.8rem;
-    color: white;
     border: none;
     cursor: pointer;
     border-radius: 3px;
+}
+
+.add-task-btn:active {
+  transform: translateY(3px);
 }
 
 .add-task-form-div {
@@ -304,7 +311,7 @@ input[type="date"],
 .task-div-left {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 1rem;
 }
 
 .check-box {
@@ -312,6 +319,14 @@ input[type="date"],
     height: 24px;
     cursor: pointer;
     accent-color: #38BDF8;
-    margin-right: 12px;
     flex-shrink: 0;
+}
+
+.task-div-right {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+.task-btns {
+    width: 24px;
 }

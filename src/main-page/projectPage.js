@@ -1,4 +1,6 @@
 import { allProjects } from "../projectData";
+import editTaskImg from "../images/editTask.svg";
+import trashImg from "../images/whiteTrash.svg"
 
 function projectPage(projectName) {
 
@@ -22,10 +24,6 @@ function projectPage(projectName) {
                     const taskDivLeft = document.createElement('div')
                     taskDivLeft.classList.add('task-div-left');
 
-                    const taskDivRight = document.createElement('div')
-                    taskDivRight.classList.add('task-div-right');
-
-
                     const checkBox = document.createElement('input');
                     checkBox.type = 'checkbox';
                     checkBox.classList.add('check-box')
@@ -33,11 +31,23 @@ function projectPage(projectName) {
                     const taskTitle = document.createElement('p')
                     taskTitle.textContent = task.title;
 
-                    const dueDate = document.createElement('small');
-                    dueDate.textContent = task.duedate;
+                    const taskDivRight = document.createElement('div')
+                    taskDivRight.classList.add('task-div-right');
+
+                    const editTaskBtn = document.createElement('img');
+                    editTaskBtn.src = editTaskImg;
+                    editTaskBtn.alt = 'edit pencil img';
+                    editTaskBtn.classList.add('task-btns');
+
+                    const deleteTaskBtn = document.createElement('img');
+                    deleteTaskBtn.src = trashImg;
+                    deleteTaskBtn.alt = 'delete trash img';
+                    deleteTaskBtn.classList.add('task-btns');
+
+                    
                     
                     taskDivLeft.append(checkBox, taskTitle);
-                    taskDivRight.append(dueDate);
+                    taskDivRight.append(editTaskBtn, deleteTaskBtn)
                     taskDiv.append(taskDivLeft, taskDivRight)
                     mainDiv.append(taskDiv)
             })
