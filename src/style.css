@@ -289,15 +289,29 @@ input[type="date"],
 }
 
 .task-div {
-    background-color:#1f4e9a;
+    background-color: #334155;
     border-radius: 5px;
     display: flex;
     justify-content: space-between;
     padding: 1rem 2rem;
 }
 
+.task-div:hover {
+    background-color: #475569;
+    cursor: pointer;
+}
+
 .task-div-left {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+}
+
+.check-box {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    accent-color: #38BDF8;
+    margin-right: 12px;
+    flex-shrink: 0;
 }

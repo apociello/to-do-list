@@ -26,8 +26,9 @@ function projectPage(projectName) {
                     taskDivRight.classList.add('task-div-right');
 
 
-                    //const checkBox = document.createElement('input');
-                    //checkBox.type = 'checkbox';
+                    const checkBox = document.createElement('input');
+                    checkBox.type = 'checkbox';
+                    checkBox.classList.add('check-box')
 
                     const taskTitle = document.createElement('p')
                     taskTitle.textContent = task.title;
@@ -35,7 +36,7 @@ function projectPage(projectName) {
                     const dueDate = document.createElement('small');
                     dueDate.textContent = task.duedate;
                     
-                    taskDivLeft.append(taskTitle);
+                    taskDivLeft.append(checkBox, taskTitle);
                     taskDivRight.append(dueDate);
                     taskDiv.append(taskDivLeft, taskDivRight)
                     mainDiv.append(taskDiv)
