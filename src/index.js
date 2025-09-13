@@ -4,7 +4,7 @@ import { logDefaultProjects } from "./projectData.js";
 import { initDialogEvents } from "./dialogEvents.js";
 
 document.addEventListener('DOMContentLoaded', () => {
-  logDefaultProjects() // TEMPORAL WHEN DELETED: projectBtns.js -> deleteProjectBtn() 2 -> 0
+  logDefaultProjects()
   initSidebarEvents()
   initDialogEvents()
 })

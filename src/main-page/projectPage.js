@@ -31,7 +31,6 @@ function projectPage(projectName) {
 
                     const taskTitle = document.createElement('p');
                     taskTitle.textContent = task.title;
-                    
                     if (task.checked) {
                         taskTitle.classList.add('task-done');
                     }

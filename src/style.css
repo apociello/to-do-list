@@ -303,11 +303,6 @@ input[type="date"],
     padding: 1rem 2rem;
 }
 
-.task-div:hover {
-    background-color: #475569;
-    cursor: pointer;
-}
-
 .task-div-left {
     display: flex;
     align-items: center;
@@ -328,7 +323,14 @@ input[type="date"],
     align-items: center;
 }
 .task-btns {
-    width: 24px;
+    width: 30px;
+    padding: 0.2rem;
+}
+
+.task-btns:hover {
+    background-color: #46566d;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .task-done {

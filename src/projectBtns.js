@@ -46,9 +46,10 @@ function deleteProjectBtn(projectName) {
           Project.deleteProject(project);
           projectLi.remove();
           
-          // TEMPORAL 2
-          if (allProjects.length == 2 || mainDivTitle === projectName) {
-            inboxPage(allProjects); 
+          if (allProjects.length == 0 || mainDivTitle === projectName) {
+            inboxPage(allProjects);
+            const addTaskBtn = document.querySelector('.add-task-btn');
+            addTaskBtn.classList.add('hidden');
             const inboxBtn = document.getElementById('inboxBtn');
             inboxBtn.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
             inboxBtn.style.borderRadius = '5px';
