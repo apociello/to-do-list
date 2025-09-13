@@ -26,10 +26,28 @@ function projectPage(projectName) {
 
                     const checkBox = document.createElement('input');
                     checkBox.type = 'checkbox';
-                    checkBox.classList.add('check-box')
+                    checkBox.classList.add('check-box');
+                    checkBox.checked = task.checked;
 
-                    const taskTitle = document.createElement('p')
+                    const taskTitle = document.createElement('p');
                     taskTitle.textContent = task.title;
+                    
+                    if (task.checked) {
+                        taskTitle.classList.add('task-done');
+                    }
+
+                    checkBox.addEventListener('change', () => {
+                        if (checkBox.checked) {
+                            task.checked = true;
+                            taskTitle.classList.toggle('task-done');
+
+                            console.log(task)
+                        } else {
+                            task.checked = false;
+                            taskTitle.classList.toggle('task-done');
+                            console.log(task)
+                        }
+                    })
 
                     const taskDivRight = document.createElement('div')
                     taskDivRight.classList.add('task-div-right');
@@ -43,6 +61,12 @@ function projectPage(projectName) {
                     deleteTaskBtn.src = trashImg;
                     deleteTaskBtn.alt = 'delete trash img';
                     deleteTaskBtn.classList.add('task-btns');
+
+                    deleteTaskBtn.addEventListener('click', () => {
+                        project.deleteTask(task);
+                        taskDiv.remove();
+                        console.log(project);
+                    })
 
                     
                     
