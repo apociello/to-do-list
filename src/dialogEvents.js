@@ -88,43 +88,66 @@ export function initDialogEvents() {
 
 
     //ADD TASK DIALOG 
-    const addTaskDialog = document.getElementById('add-task-dialog');
-    const addTaskForm = document.querySelector('.add-task-form');
-    const openAddTaskDialog = document.querySelector('.add-task-btn');
-    const closeAddTaskDialog = document.querySelector('.close-add-task');
+    const taskDialog = document.getElementById('task-dialog');
+    const taskForm = document.querySelector('.task-form');
+    const openTaskDialog = document.querySelector('.add-task-btn');
+    const closeTaskDialog = document.querySelector('.close-add-task');
 
-    openAddTaskDialog.addEventListener('click', () => addTaskDialog.showModal())
+    openTaskDialog.addEventListener('click', () => taskDialog.showModal())
 
-    addTaskForm.addEventListener('submit', (e) => {
+    taskForm.addEventListener('submit', (e) => {
         e.preventDefault();
 
         // get form data
-        const title = addTaskForm.querySelector('#Title').value;
-        const description = addTaskForm.querySelector('#description').value;
-        const dueDate = addTaskForm.querySelector('#date').value;
-        const priority = addTaskForm.querySelector('#priority').value;
-
-        const newTask = new Task(title, description, dueDate, priority, false)
-        console.log(newTask)
+        const title = taskForm.querySelector('#Title').value;
+        const description = taskForm.querySelector('#description').value;
+        const dueDate = taskForm.querySelector('#date').value;
+        const priority = taskForm.querySelector('#priority').value;
 
         const mainDivTitle = document.getElementById('title').textContent;
-        allProjects.forEach((project) => {
-            if (project.title === mainDivTitle) {
-                project.addTask(newTask);
-                projectPage(project.title)
-                console.log(project.taskList);
-                console.log(allProjects)
-            }
-        })
+        
+        if (taskDialog.dataset.edit === "false") {
 
+            const newTask = new Task(title, description, dueDate, priority, false)
+            console.log(newTask)
+            allProjects.forEach((project) => {
+                if (project.title === mainDivTitle) {
+                    project.addTask(newTask);
+                    projectPage(project.title)
+                    console.log(project.taskList);
+                    console.log(allProjects)
+                }
+            })
+        } else {
+            allProjects.forEach((project) => {
+                if (project.title === mainDivTitle) {
+                    project.taskList.forEach((task) => {
+                        if (task.title === taskDialog.dataset.taskName) {
+                            task.title = title;
+                            task.description = description;
+                            task.duedate = dueDate;
+                            task.priority = priority;
+                            projectPage(project.title);
+                            console.log(project.taskList);
+                            console.log(allProjects);
 
-        addTaskForm.reset();
-        addTaskDialog.close();
+                            taskDialog.dataset.edit = "false";
+                            taskDialog.dataset.taskName = "";
+                        }
+                    })
+                }
+            })
+        }
+        
+        taskForm.reset();
+        taskDialog.close();
     } )
 
-    closeAddTaskDialog.addEventListener('click', (e) => {
+    closeTaskDialog.addEventListener('click', (e) => {
         e.preventDefault();
-        addTaskForm.reset();
-        addTaskDialog.close();
+        taskDialog.dataset.edit = "false";
+        taskDialog.dataset.taskName = "";
+        taskForm.reset();
+        taskDialog.close();
     }) 
 }

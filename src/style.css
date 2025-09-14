@@ -231,7 +231,7 @@ input:focus {
 
 /* ADD TASK DIALOG */
 
-dialog#add-task-dialog {
+dialog#task-dialog {
   top: 50%;
   left: 50%;
 }
@@ -256,7 +256,7 @@ dialog#add-task-dialog {
   transform: translateY(3px);
 }
 
-.add-task-form-div {
+.task-form-div {
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -279,11 +279,11 @@ dialog#add-task-dialog {
 
 
 input[type="date"],
-.add-task-form-div select {
+.task-form-div select {
     width: fit-content;
 }
 
-#add-task-dialog .dialog-btns {
+#task-dialog .dialog-btns {
     margin-top: 1rem;
 }
 

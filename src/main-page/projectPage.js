@@ -56,6 +56,24 @@ function projectPage(projectName) {
                     editTaskBtn.alt = 'edit pencil img';
                     editTaskBtn.classList.add('task-btns');
 
+                    //EDIT TASK
+                    const editTaskDialog = document.getElementById('task-dialog');
+                    const editTaskForm = document.querySelector('.task-form')
+                    const saveBtn = document.querySelector('.save');
+
+                    editTaskBtn.addEventListener('click', () => {
+                        editTaskDialog.dataset.edit = "true"
+                        editTaskDialog.dataset.taskName = task.title;
+
+                        editTaskForm.querySelector("#Title").value = task.title;
+                        editTaskForm.querySelector("#description").value = task.description;
+                        editTaskForm.querySelector("#date").value = task.duedate;
+                        editTaskForm.querySelector("#priority").value = task.priority;
+
+                        saveBtn.textContent = 'Save';
+                        editTaskDialog.showModal()
+                    })
+
                     const deleteTaskBtn = document.createElement('img');
                     deleteTaskBtn.src = trashImg;
                     deleteTaskBtn.alt = 'delete trash img';
