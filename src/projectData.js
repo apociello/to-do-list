@@ -18,7 +18,7 @@ export function logDefaultProjects() {
     const task1 = new Task(
     "Learn JavaScript",
     "Review classes and modules for the project",
-    "2025-09-12",
+    "2025-09-15",
     "High",
     false
     );
@@ -26,7 +26,7 @@ export function logDefaultProjects() {
     const task2 = new Task(
     "Workout",
     "30 minutes of cardio and stretching",
-    "2025-09-10",
+    "2025-09-16",
     "Medium",
     false
     );

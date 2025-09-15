@@ -4,6 +4,9 @@ import { sidebarAddProject } from "./addProyect.js";
 import { projectPage } from "./main-page/projectPage.js";
 import { projectExits } from "./addProyect.js";
 import { Task } from "./modules/task.js";
+import { inboxPage } from "./main-page/inboxPage.js"; 
+import { todayPage } from "./main-page/todayPage.js"; 
+import { thisWeekPage } from "./main-page/thisWeekPage.js"; 
 
 
 export function initDialogEvents() {
@@ -97,8 +100,6 @@ export function initDialogEvents() {
 
     taskForm.addEventListener('submit', (e) => {
         e.preventDefault();
-
-        // get form data
         const title = taskForm.querySelector('#Title').value;
         const description = taskForm.querySelector('#description').value;
         const dueDate = taskForm.querySelector('#date').value;
@@ -107,7 +108,6 @@ export function initDialogEvents() {
         const mainDivTitle = document.getElementById('title').textContent;
         
         if (taskDialog.dataset.edit === "false") {
-
             const newTask = new Task(title, description, dueDate, priority, false)
             console.log(newTask)
             allProjects.forEach((project) => {
@@ -120,24 +120,27 @@ export function initDialogEvents() {
             })
         } else {
             allProjects.forEach((project) => {
-                if (project.title === mainDivTitle) {
-                    project.taskList.forEach((task) => {
-                        if (task.title === taskDialog.dataset.taskName) {
-                            task.title = title;
-                            task.description = description;
-                            task.duedate = dueDate;
-                            task.priority = priority;
-                            projectPage(project.title);
-                            console.log(project.taskList);
-                            console.log(allProjects);
+                project.taskList.forEach((task) => {
+                    if (task.title === taskDialog.dataset.taskName) {
+                        task.title = title;
+                        task.description = description;
+                        task.duedate = dueDate;
+                        task.priority = priority;
+                        console.log(project.taskList);
+                        console.log(allProjects);
 
-                            taskDialog.dataset.edit = "false";
-                            taskDialog.dataset.taskName = "";
-                        }
-                    })
-                }
+                        if (mainDivTitle === 'Inbox') {
+                            inboxPage(allProjects)
+                        } else if (mainDivTitle === 'Today') {
+                                todayPage(allProjects)
+                        } else if (mainDivTitle === 'This Week'){
+                            thisWeekPage(allProjects)
+                        } else (projectPage(project.title))
+                    }
+                })
             })
-        }
+            taskDialog.dataset.edit = "false"
+        } 
         
         taskForm.reset();
         taskDialog.close();

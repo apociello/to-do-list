@@ -1,4 +1,5 @@
 import { getAllTasks, getWeekTasks } from "../modules/todo";
+import { renderTasks } from "../renderTasks";
 
 function thisWeekPage(projects) {
     const title = document.getElementById('title');
@@ -9,11 +10,7 @@ function thisWeekPage(projects) {
     const allTasks = getAllTasks(projects);
     const weekTasks = getWeekTasks(allTasks);
 
-    weekTasks.forEach((task) => {
-        const taskp = document.createElement('p');
-        taskp.textContent = task.title;
-        mainDiv.append(taskp)
-    })
+    renderTasks(weekTasks);
 }
 
 export {thisWeekPage}

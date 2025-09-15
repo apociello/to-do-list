@@ -1,4 +1,5 @@
 import { getAllTasks, getTodayTasks } from "../modules/todo";
+import { renderTasks } from "../renderTasks";
 
 function todayPage(projects) {
     const title = document.getElementById('title');
@@ -9,11 +10,7 @@ function todayPage(projects) {
     const allTasks = getAllTasks(projects);
     const todayTasks = getTodayTasks(allTasks);
 
-    todayTasks.forEach((task) => {
-        const taskp = document.createElement('p');
-        taskp.textContent = task.title;
-        mainDiv.append(taskp)
-    })
+    renderTasks(todayTasks);
 }
 
 export {todayPage}

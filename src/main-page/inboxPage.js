@@ -1,4 +1,5 @@
 import { getAllTasks } from "../modules/todo.js";
+import { renderTasks } from "../renderTasks.js";
 
 function inboxPage(projects) {
     const title = document.getElementById('title');
@@ -8,11 +9,7 @@ function inboxPage(projects) {
     mainDiv.textContent = '';
     const allTasks = getAllTasks(projects);
 
-    allTasks.forEach((task) => {
-        const taskp = document.createElement('p');
-        taskp.textContent = task.title;
-        mainDiv.append(taskp)
-    })
+    renderTasks(allTasks);
 }
 
 export {inboxPage}
