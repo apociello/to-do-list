@@ -68,7 +68,7 @@ li.file-line{
     list-style: none;
     color: rgb(136, 136, 136);
     font-size: 0.8em;
-    margin-left: 2rem;
+    padding-left: 1.5rem;
 }
 
 .sidebar-line-right {
