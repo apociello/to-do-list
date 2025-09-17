@@ -1,5 +1,5 @@
 import { getAllTasks } from "../modules/todo.js";
-import { renderTasks } from "../renderTasks.js";
+import { renderTasks } from "./renderTasks.js";
 
 function inboxPage(projects) {
     const title = document.getElementById('title');

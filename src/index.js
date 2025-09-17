@@ -1,5 +1,5 @@
 import "./style.css"
-import { initSidebarEvents } from "./initSidebarEvents.js";
+import { initSidebarEvents } from "./initEvents.js";
 import { logDefaultProjects } from "./projectData.js";
 import { initDialogEvents } from "./dialogEvents.js";
 

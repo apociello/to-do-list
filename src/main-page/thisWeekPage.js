@@ -1,5 +1,5 @@
 import { getAllTasks, getWeekTasks } from "../modules/todo";
-import { renderTasks } from "../renderTasks";
+import { renderTasks } from "./renderTasks";
 
 function thisWeekPage(projects) {
     const title = document.getElementById('title');

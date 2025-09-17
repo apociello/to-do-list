@@ -10,7 +10,7 @@ import { thisWeekPage } from "./main-page/thisWeekPage.js";
 
 
 export function initDialogEvents() {
-    
+
     //ADD PROJECT DIALOG
     const addProjectDialog = document.getElementById('add-project-dialog');
     const addProjectForm = document.querySelector('.add-project-form');
@@ -65,7 +65,7 @@ export function initDialogEvents() {
             })
             console.log(allProjects)
 
-                //RERENDER MAIN-DIV
+            //RERENDER MAIN-DIV
             const mainDivTitle = document.getElementById('title').textContent;
             if (mainDivTitle === oldProjectId) {
                 projectPage(inputRename.value);
@@ -90,7 +90,7 @@ export function initDialogEvents() {
     }) 
 
 
-    //ADD TASK DIALOG 
+    //ADD/EDIT TASK DIALOG 
     const taskDialog = document.getElementById('task-dialog');
     const taskForm = document.querySelector('.task-form');
     const openTaskDialog = document.querySelector('.add-task-btn');

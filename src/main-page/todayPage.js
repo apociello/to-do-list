@@ -1,5 +1,5 @@
 import { getAllTasks, getTodayTasks } from "../modules/todo";
-import { renderTasks } from "../renderTasks";
+import { renderTasks } from "./renderTasks";
 
 function todayPage(projects) {
     const title = document.getElementById('title');

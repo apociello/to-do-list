@@ -1,6 +1,6 @@
-import { allProjects } from "./projectData";
-import editTaskImg from "./images/editTask.svg";
-import trashImg from "./images/whiteTrash.svg";
+import { allProjects } from "../projectData";
+import editTaskImg from "../images/editTask.svg";
+import trashImg from "../images/whiteTrash.svg";
 
 function renderTasks(tasks) {
     const projects = allProjects;

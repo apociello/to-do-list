@@ -1,5 +1,5 @@
 import { allProjects } from "../projectData";
-import { renderTasks } from "../renderTasks";
+import { renderTasks } from "./renderTasks";
 
 function projectPage(projectName) {
 
