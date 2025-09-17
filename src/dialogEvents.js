@@ -7,6 +7,7 @@ import { Task } from "./modules/task.js";
 import { inboxPage } from "./main-page/inboxPage.js"; 
 import { todayPage } from "./main-page/todayPage.js"; 
 import { thisWeekPage } from "./main-page/thisWeekPage.js"; 
+import { Note } from "./modules/note.js";
 
 
 export function initDialogEvents() {
@@ -153,4 +154,46 @@ export function initDialogEvents() {
         taskForm.reset();
         taskDialog.close();
     }) 
+
+
+    //ADD NOTE DIALOG
+    const addNoteDialog = document.getElementById('add-note-dialog');
+    const addNoteForm = document.querySelector('.add-note-form');
+    const addNoteInput = document.getElementById('note-name');
+    const openAddNoteDialog = document.getElementById('open-add-note-dialog');
+    const addNoteError = document.getElementById('add-note-error');
+    const closeAddNoteDialog = document.querySelector('.close-add-note-dialog');
+
+    openAddNoteDialog.addEventListener('click', () => addNoteDialog.showModal());
+    addNoteForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const noteName = addNoteInput.value;
+        
+        //HAY QUE CHECKEAR SI SE REPITE NOMBRE(falta)
+
+        new Note(noteName);
+        console.log(Note.noteList);
+        addNoteForm.reset();
+        addNoteDialog.close();
+    })
+
+
+
+    /*openAddProjectDialog.addEventListener('click', () => addProjectDialog.showModal());
+    addProjectForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const projectName = addProjectInput.value;
+        
+        if (projectExits(projectName)) {
+            addError.classList.remove('hidden')
+        } else {
+            addError.classList.add('hidden')
+            new Project(projectName);
+            sidebarAddProject(projectName);
+            console.log(allProjects) 
+            addProjectForm.reset();
+            addProjectDialog.close()
+        }
+    })*/
+
 }

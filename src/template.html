@@ -100,7 +100,7 @@
                                 </div>
 
                                 <div class="sidebar-line-right">
-                                    <img src="./images/add.svg" alt="add icon" class="sidebar-add-icon">
+                                    <img src="./images/add.svg" alt="add icon" id="open-add-note-dialog" class="sidebar-add-icon">
                                 </div>
                                 
                             </div>
@@ -215,6 +215,22 @@
                     <button type="button" class="close-add-task">Close</button>
                 </div>
 
+            </form>
+        </dialog>
+
+        <dialog id="add-note-dialog">
+            <form action="" method="post" autocomplete="off" class="add-note-form">
+                <div>
+                    <p>New Note</p>
+                    <input type="text" name="note-name" id="note-name" placeholder="note name" required>
+                    <p id="add-note-error" class="note-error hidden">This note already exists</p>
+                </div>
+
+                <div class="dialog-btns">
+                    <button type="submit" class="add">Add</button>
+                    <button type="button" class="close-add-note-dialog">Close</button>
+                </div>
+                
             </form>
         </dialog>
     </div>
