@@ -1,4 +1,4 @@
-import { allProjects } from "../projectData";
+import { allProjects } from "../data/projectData";
 import { renderTasks } from "./renderTasks";
 
 function projectPage(projectName) {

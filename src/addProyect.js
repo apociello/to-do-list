@@ -1,10 +1,9 @@
 // ADD PROJECT TO THE SIDEBAR
 import { Project } from "./modules/project";
-import { allProjects } from "./projectData";
+import { allProjects } from "./data/projectData.js";
 import fileIconImg from "./images/file.svg";
 import renameIcon from "./images/edit.svg";
 import trashIcon from "./images/trash.svg";
-import { inboxPage } from "./main-page/inboxPage";
 import { initProjectEvents } from "./initEvents.js";
 
 
@@ -29,7 +28,7 @@ function sidebarAddProject(projectName) {
     rightSideDiv.classList.add('sidebar-line-right')
 
     const renameBtn = renameProjectBtn()
-    const trashBtn = deleteProjectBtn(projectName)
+    const trashBtn = deleteProjectBtn()
 
     leftSideDiv.append(fileIcon, projectTitle);
     rightSideDiv.append(renameBtn, trashBtn)
@@ -61,7 +60,7 @@ function renameProjectBtn() {
     return renameBtn;
 }
 
-function deleteProjectBtn(projectName) {
+function deleteProjectBtn() {
     const trashBtn = document.createElement("img");
     trashBtn.src = trashIcon;
     trashBtn.alt = 'trash delete icon';
@@ -83,12 +82,10 @@ function deleteProjectBtn(projectName) {
           projectLi.remove();
           
           if (allProjects.length == 0 || mainDivTitle === projectName) {
-            inboxPage(allProjects);
             const addTaskBtn = document.querySelector('.add-task-btn');
             addTaskBtn.classList.add('hidden');
             const inboxBtn = document.getElementById('inboxBtn');
-            inboxBtn.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
-            inboxBtn.style.borderRadius = '5px';
+            inboxBtn.click();
           }
         }
       });

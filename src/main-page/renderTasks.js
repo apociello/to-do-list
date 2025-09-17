@@ -1,4 +1,4 @@
-import { allProjects } from "../projectData";
+import { allProjects } from "../data/projectData";
 import editTaskImg from "../images/editTask.svg";
 import trashImg from "../images/whiteTrash.svg";
 

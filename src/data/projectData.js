@@ -1,15 +1,8 @@
-import { Project } from "./modules/project.js"
+import { Project } from "../modules/project.js";
+import { Task } from "../modules/task.js";
+import { sidebarAddProject } from "../addProyect.js";
 
 export const allProjects = Project.projectList;
-
-
-
-
-// DEFAULT PROJECTS IN THE APP
-import { Task } from "./modules/task.js"
-import { getAllTasks, getTodayTasks, getWeekTasks } from "./modules/todo.js";
-import { Note } from "./modules/note.js";
-import { sidebarAddProject } from "./addProyect.js";
 
 export function logDefaultProjects() {
     const project1 = new Project("Personal Development");
@@ -74,23 +67,5 @@ export function logDefaultProjects() {
     project2.addTask(task5);
     project2.addTask(task6);
 
-
-    const note1 = new Note('Games');
-    note1.text = 'Minecraft, Stardew Valley, Rocket League, Resident Evil';
-
-    const note2 = new Note('Cat');
-    note2.text = 'Ronny, Maya';
-
-
-    // console log
-    // TO DO
-    const allTasks = getAllTasks(allProjects);
-    console.log(allTasks)
-
-    // PROJECTS
     console.log(allProjects)
-
-    //NOTES
-    //console.log(allNotes);
-
 }

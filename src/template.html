@@ -105,8 +105,8 @@
                                 
                             </div>
 
-                            <ul>
-                                <li class="file-line" data-id="Games">
+                            <ul class="note-list"> 
+                                <!-- <li class="file-line" data-id="Games">
                                     <div class="sidebar-line-left">
                                         <img src="./images/file.svg" alt="written file icon" class="file-icon">
                                         <p>Games</p>
@@ -128,7 +128,7 @@
                                         <img src="./images/trash.svg" alt="trash delete icon" class="sidebar-line-right-icon">
                                     </div>
                                     
-                                </li>
+                                </li> -->
                             </ul>
                         </section>
                     </section>
@@ -233,6 +233,23 @@
                 
             </form>
         </dialog>
+
+        <dialog id="rename-note-dialog">
+            <form action="" method="post" autocomplete="off" class="rename-form">
+                <div>
+                    <p>Rename Note</p>
+                    <input type="text" name="note-rename" id="note-rename-input" required>
+                    <p id="rename-error" class="note-error hidden">This note already exists</p>
+                </div>
+
+                <div class="dialog-btns">
+                    <button type="submit" class="save-rename">Save</button>
+                    <button type="button" class="close-rename">Cancel</button>
+                </div>
+                
+            </form>
+        </dialog>
+
     </div>
 
 </body>
