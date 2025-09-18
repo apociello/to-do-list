@@ -303,6 +303,7 @@ input[type="date"],
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    padding: 0 4rem;
 }
 
 .task-div {
@@ -347,4 +348,17 @@ input[type="date"],
     color: gray;
     text-decoration: line-through;
     text-decoration-color: gray;
+}
+
+
+/* NOTE */
+
+.note {
+    height: 100%;
+    line-height: 1.6;
+    outline: none;
+    font-size: 1.1rem !important;
+    white-space: pre-wrap;       /* respeta saltos de línea y envuelve texto */
+    word-break: break-word;      /* rompe palabras largas */
+    overflow-wrap: break-word;
 }

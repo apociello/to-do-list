@@ -7,6 +7,8 @@ function todayPage(projects) {
 
     const mainDiv = document.getElementById('main-div');
     mainDiv.textContent = '';
+    mainDiv.contentEditable = "false";
+    mainDiv.classList.remove('note');
     const allTasks = getAllTasks(projects);
     const todayTasks = getTodayTasks(allTasks);
 

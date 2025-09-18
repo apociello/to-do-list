@@ -13,6 +13,8 @@ function projectPage(projectName) {
             addTaskBtn.classList.remove('hidden')
             const mainDiv = document.getElementById('main-div');
             mainDiv.textContent = ''
+            mainDiv.contentEditable = "false";
+            mainDiv.classList.remove('note');
             const tasks = project.taskList;
 
             if (tasks.length !== 0) {

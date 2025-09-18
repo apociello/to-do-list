@@ -11,7 +11,7 @@ export function logDefaultProjects() {
     const task1 = new Task(
     "Learn JavaScript",
     "Review classes and modules for the project",
-    "2025-09-15",
+    "2025-09-18",
     "High",
     false
     );
@@ -50,7 +50,7 @@ export function logDefaultProjects() {
     const task5 = new Task(
     "Update Resume",
     "Add recent projects and skills",
-    "2025-09-17",
+    "2025-09-19",
     "Medium",
     false
     );
@@ -58,7 +58,7 @@ export function logDefaultProjects() {
     const task6 = new Task(
     "Networking",
     "Send follow-up emails to 3 contacts",
-    "2025-09-11",
+    "2025-09-18",
     "Low",
     false
     );
