@@ -11,6 +11,7 @@ import { inboxPage } from "./main-page/inboxPage.js";
 import { todayPage } from "./main-page/todayPage.js"; 
 import { thisWeekPage } from "./main-page/thisWeekPage.js"; 
 import { Note } from "./modules/note.js";
+import { notePage } from "./main-page/notePage.js";
 
 
 export function initDialogEvents() {
@@ -192,5 +193,52 @@ export function initDialogEvents() {
         addNoteDialog.close();
     })
 
+
+
+    const renameNoteDialog = document.getElementById('rename-note-dialog');
+    const inputNoteRename = document.getElementById('note-rename-input');
+    const renameNoteForm = document.querySelector('.rename-note-form');
+    const renameNoteError = document.getElementById('rename-note-error')
+    const closeRenameNoteDialog = document.querySelector('.close-rename-note');
+
+    renameNoteForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        let oldNoteId = renameNoteDialog.dataset.dialogId;
+        const noteLi = document.querySelector(`[data-id="${oldNoteId}"]`)
+        const p = noteLi.querySelector('p');
+
+        if(inputNoteRename.value.toLowerCase() === oldNoteId.toLowerCase() || !noteExits(inputNoteRename.value)) {
+            renameNoteError.classList.add('hidden');
+            allNotes.forEach((note) => {
+                if (note.title === oldNoteId) {
+                    note.title = inputNoteRename.value;
+                }
+            })
+            console.log(allNotes)
+
+            //RENDER MAIN-DIV
+            const mainDivTitle = document.getElementById('title').textContent;
+            if (mainDivTitle === oldNoteId) {
+                notePage(inputNoteRename.value)
+            }
+
+            noteLi.dataset.id = inputNoteRename.value;
+            oldNoteId = inputNoteRename.value;
+            p.textContent = inputNoteRename.value;
+
+            renameNoteForm.reset();
+            renameNoteDialog.close();
+
+        } else if (noteExits(inputNoteRename.value)) {
+            renameNoteError.classList.remove('hidden');
+        }
+    })
+
+    closeRenameNoteDialog.addEventListener('click', (e) => {
+        e.preventDefault();
+        renameNoteForm.reset();
+        renameNoteError.classList.add('hidden');
+        renameNoteDialog.close();
+    })
 
 }

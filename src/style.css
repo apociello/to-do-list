@@ -184,7 +184,9 @@ dialog p {
 }
 
 .add-project-form input,
-.rename-form input {
+.rename-form input,
+.add-note-form input,
+.rename-note-form input {
     margin: 1rem 0;
     font-size: 1.3rem;
 }
@@ -226,7 +228,8 @@ input:focus {
     cursor: pointer;
 }
 
-.project-error {
+.project-error,
+.note-error {
     font-size: 1rem;
     color: red;
     margin-bottom: 1rem;
