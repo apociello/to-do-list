@@ -21,16 +21,16 @@ God grant me the serenity to accept the things I cannot change, the courage to c
     sidebarAddNote('Quotes');
 
     const note2 = new Note('Birthdays');
-    note2.text = `Alex Thompson: March 12, 1992  
-Emily Rivera: July 8, 1988  
-Michael Chen: November 23, 1995  
-Sophia Patel: February 14, 1990  
-Daniel Brooks: September 30, 1993  
-Olivia Martinez: June 5, 1991  
-Liam Johnson: December 18, 1989  
-Isabella Lopez: January 22, 1994  
-Ethan White: October 10, 1992  
-Grace Kim: May 16, 1990
+    note2.text = `- Alex Thompson: March 12, 1992  
+- Emily Rivera: July 8, 1988  
+- Michael Chen: November 23, 1995  
+- Sophia Patel: February 14, 1990  
+- Daniel Brooks: September 30, 1993  
+- Olivia Martinez: June 5, 1991  
+- Liam Johnson: December 18, 1989  
+- Isabella Lopez: January 22, 1994  
+- Ethan White: October 10, 1992  
+- Grace Kim: May 16, 1990
 `;
     sidebarAddNote('Birthdays')
 

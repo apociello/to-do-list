@@ -237,6 +237,10 @@ input:focus {
     cursor: pointer;
 }
 
+.dialog-btns button:active {
+  background: #384f74; 
+}
+
 .project-error,
 .note-error {
     font-size: 1rem;
