@@ -17,6 +17,7 @@ body {
     height: 100%;
     color: white;
     font-family: 'Lato';
+    overflow: hidden;
 }
 
 .container {
@@ -162,25 +163,6 @@ main {
     overflow-y: auto;
 }
 
-/* Scrollbar */
-main::-webkit-scrollbar {
-  width: 8px;     
-  height: 20px;       
-}
-
-main::-webkit-scrollbar-track {
-  background: transparent;    
-}
-
-main::-webkit-scrollbar-thumb {
-  background: #888;         
-  border-radius: 10px;
-}
-
-main::-webkit-scrollbar-thumb:hover {
-  background: #7a7a7a;         
-}
-
 #title {
     align-self: center;
     font-size: 3rem;
@@ -190,8 +172,6 @@ main::-webkit-scrollbar-thumb:hover {
 #main-div {
     font-size: 1.5rem;
 }
-
-
 
 /* ADD PROJECT DIALOG*/
 dialog {
