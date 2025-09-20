@@ -10,13 +10,13 @@ function projectPage(projectName) {
             title.textContent = project.title;
 
             const addTaskBtn = document.querySelector('.add-task-btn')
-            addTaskBtn.classList.remove('hidden')
+            addTaskBtn.classList.remove('hidden');
+
             const mainDiv = document.getElementById('main-div');
             mainDiv.textContent = ''
-            mainDiv.contentEditable = "false";
-            mainDiv.classList.remove('note');
+            mainDiv.classList.remove('height');
+            
             const tasks = project.taskList;
-
             if (tasks.length !== 0) {
                 renderTasks(tasks);
             } 

@@ -2,26 +2,23 @@ import { allNotes } from "../data/noteData";
 
 function notePage(noteName) {
     const mainDiv = document.getElementById('main-div');
-    
-    mainDiv.textContent = '';
-    mainDiv.replaceWith(mainDiv.cloneNode(false)); 
-    const newMainDiv = document.getElementById('main-div'); 
+    mainDiv.innerHTML = ''; 
+    mainDiv.classList.add('height')
 
-    allNotes.forEach((note) => {
-        if (note.title === noteName) {
-            const title = document.getElementById('title');
-            title.textContent = note.title;
+    const note = allNotes.find(n => n.title === noteName);
+    if (!note) return;
 
-            newMainDiv.contentEditable = "true";
-            newMainDiv.spellcheck = "false";
-            newMainDiv.classList.add('note');
-            newMainDiv.textContent = note.text;
+    const title = document.getElementById('title');
+    title.textContent = note.title;
 
-            newMainDiv.addEventListener('input', () => {
-                note.text = newMainDiv.textContent;
-            });
-        }
+    const textarea = document.createElement('textarea');
+    textarea.value = note.text;
+    textarea.addEventListener('input', () => {
+        note.text = textarea.value;
     });
+    
+    console.log(note)
+    mainDiv.appendChild(textarea);
 }
 
 export {notePage}

@@ -5,10 +5,13 @@ function thisWeekPage(projects) {
     const title = document.getElementById('title');
     title.textContent = 'This Week'
 
+    const noteDiv = document.querySelector('.note-div');
+    if (noteDiv){
+        noteDiv.remove();
+    }
+
     const mainDiv = document.getElementById('main-div');
     mainDiv.textContent = '';
-    mainDiv.contentEditable = "false";
-    mainDiv.classList.remove('note');
     const allTasks = getAllTasks(projects);
     const weekTasks = getWeekTasks(allTasks);
 

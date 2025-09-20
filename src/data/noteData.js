@@ -16,12 +16,21 @@ If people knew how hard I had to work to gain my mastery, it wouldn't seem wonde
 I had the blues because I had no shoes, until upon the street, I met a man who had no feet.
 
 ~ Reinhold Niebuhr ~
-God grant me the serenity to accept the things I cannot change, the courage to change the things I can, and the wisdom to know the difference.`;
+God grant me the serenity to accept the things I cannot change, the courage to change the things I can, and the wisdom to know the difference.
 
-    sidebarAddNote('Quotes');
+~ Earl Nightingale ~
+When you judge others, you do not define them, you define yourself.
 
-    const note2 = new Note('Birthdays');
-    note2.text = `- Alex Thompson: March 12, 1992  
+~ Emerson ~
+Every man I meet is my superior in some way. In that, I learn of him.
+
+~ Jim Rohn ~
+The greatest value in life is not what you get. The greatest value in life is what you become.`;
+
+sidebarAddNote('Quotes');
+
+const note2 = new Note('Birthdays');
+note2.text = `- Alex Thompson: March 12, 1992  
 - Emily Rivera: July 8, 1988  
 - Michael Chen: November 23, 1995  
 - Sophia Patel: February 14, 1990  

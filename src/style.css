@@ -365,13 +365,18 @@ input[type="date"],
 
 
 /* NOTE */
-
-.note {
+.height {
     height: 100%;
-    line-height: 1.6;
-    outline: none;
-    font-size: 1.1rem !important;
-    white-space: pre-wrap;       /* respeta saltos de línea y envuelve texto */
-    word-break: break-word;      /* rompe palabras largas */
-    overflow-wrap: break-word;
+}
+
+#main-div textarea {
+    width: 100%;
+    height: 100%;
+    resize: none;
+    outline: none; 
+    border: 1px solid #ccc;  
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 1rem;
+    color: #3a4a64;
 }
