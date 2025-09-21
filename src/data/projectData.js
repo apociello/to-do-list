@@ -1,17 +1,21 @@
 import { Project } from "../modules/project.js";
 import { Task } from "../modules/task.js";
 import { sidebarAddProject } from "../addProyect.js";
+import { addDays, format } from "date-fns";
 
 export const allProjects = Project.projectList;
 
+
 export function logDefaultProjects() {
+    const today = new Date();
+
     const project1 = new Project("Personal Development");
     sidebarAddProject('Personal Development');
 
     const task1 = new Task(
     "Learn JavaScript",
     "Review classes and modules for the project",
-    "2025-09-18",
+    format(today, "yyyy-MM-dd"),
     "High",
     false
     );
@@ -19,15 +23,15 @@ export function logDefaultProjects() {
     const task2 = new Task(
     "Workout",
     "30 minutes of cardio and stretching",
-    "2025-09-16",
+    format(today, "yyyy-MM-dd"),
     "Medium",
     false
     );
 
     const task3 = new Task(
     "Read a book",
-    "Finish reading 50 pages of 'Atomic Habits'",
-    "2025-09-27",
+    "Finish reading 50 pages of 'Clean Architecture'",
+    format(addDays(today, 1), "yyyy-MM-dd"),
     "Low",
     false
     );
@@ -42,15 +46,15 @@ export function logDefaultProjects() {
     const task4 = new Task(
     "Prepare Presentation",
     "Create slides for Monday's meeting",
-    "2025-09-20",
-    "High",
+    format(addDays(today, 3), "yyyy-MM-dd"),
+    "Medium",
     false
     );
 
     const task5 = new Task(
     "Update Resume",
     "Add recent projects and skills",
-    "2025-09-19",
+    format(addDays(today, 15), "yyyy-MM-dd"),
     "Medium",
     false
     );
@@ -58,7 +62,7 @@ export function logDefaultProjects() {
     const task6 = new Task(
     "Networking",
     "Send follow-up emails to 3 contacts",
-    "2025-09-18",
+    format(addDays(today, 10), "yyyy-MM-dd"),
     "Low",
     false
     );
