@@ -28,11 +28,11 @@ function renderTasks(tasks) {
         if (checkBox.checked) {
             task.checked = true;
             taskTitle.classList.toggle('task-done');
-            console.log(task);
+            console.log(allProjects);
         } else {
             task.checked = false;
             taskTitle.classList.toggle('task-done');
-            console.log(task);
+            console.log(allProjects);
         }
     });
 
@@ -62,6 +62,7 @@ function renderTasks(tasks) {
         editTaskDialog.showModal();
     });
 
+    // DELETE TASK
     const deleteTaskBtn = document.createElement('img');
     deleteTaskBtn.src = trashImg;
     deleteTaskBtn.alt = 'delete trash img';
@@ -73,6 +74,7 @@ function renderTasks(tasks) {
                 if (task === projectTask) {
                     project.deleteTask(task);
                     taskDiv.remove();
+                    console.log(allProjects)
                 }
             });
         });

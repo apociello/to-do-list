@@ -124,7 +124,6 @@ export function initDialogEvents() {
                 if (project.title === mainDivTitle) {
                     project.addTask(newTask);
                     projectPage(project.title)
-                    console.log(project.taskList);
                     console.log(allProjects)
                 }
             })
@@ -136,7 +135,6 @@ export function initDialogEvents() {
                         task.description = description;
                         task.duedate = dueDate;
                         task.priority = priority;
-                        console.log(project.taskList);
                         console.log(allProjects);
 
                         if (mainDivTitle === 'Inbox') {
@@ -178,7 +176,6 @@ export function initDialogEvents() {
         e.preventDefault();
         const noteName = addNoteInput.value;
         
-        //HAY QUE CHECKEAR SI SE REPITE NOMBRE(falta)
         if(noteExits(noteName)) {
             addNoteError.classList.remove('hidden')
         } else {

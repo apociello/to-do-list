@@ -1,6 +1,5 @@
 import { Note } from "./modules/note";
 import { allNotes } from "./data/noteData";
-import { allProjects } from "./data/projectData";
 import fileIconImg from "./images/file.svg";
 import renameIcon from "./images/edit.svg";
 import trashIcon from "./images/trash.svg";

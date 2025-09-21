@@ -17,7 +17,6 @@ function notePage(noteName) {
         note.text = textarea.value;
     });
     
-    console.log(note)
     mainDiv.appendChild(textarea);
 }
 
