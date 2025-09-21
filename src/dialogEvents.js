@@ -12,6 +12,7 @@ import { todayPage } from "./main-page/todayPage.js";
 import { thisWeekPage } from "./main-page/thisWeekPage.js"; 
 import { Note } from "./modules/note.js";
 import { notePage } from "./main-page/notePage.js";
+import { format } from "date-fns";
 
 
 export function initDialogEvents() {
@@ -101,7 +102,11 @@ export function initDialogEvents() {
     const openTaskDialog = document.querySelector('.add-task-btn');
     const closeTaskDialog = document.querySelector('.close-add-task');
 
-    openTaskDialog.addEventListener('click', () => taskDialog.showModal())
+    openTaskDialog.addEventListener('click', () => {
+        const dueDate = document.getElementById("date");
+        dueDate.value = format(new Date(), "yyyy-MM-dd");
+        taskDialog.showModal()
+    });
 
     taskForm.addEventListener('submit', (e) => {
         e.preventDefault();
