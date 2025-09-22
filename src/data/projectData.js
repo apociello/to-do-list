@@ -1,12 +1,10 @@
-import { Project } from "../modules/project.js";
-import { Task } from "../modules/task.js";
-import { sidebarAddProject } from "../addProyect.js";
+import { Project, Task } from "../classes.js";
+import { sidebarAddProject } from "../uiManager.js";
 import { addDays, format } from "date-fns";
 
-export const allProjects = Project.projectList;
+const allProjects = Project.projectList;
 
-
-export function logDefaultProjects() {
+function initDefaultProjects() {
     const today = new Date();
 
     const project1 = new Project("Personal Development");
@@ -73,3 +71,5 @@ export function logDefaultProjects() {
 
     console.log(allProjects)
 }
+
+export {allProjects, initDefaultProjects};

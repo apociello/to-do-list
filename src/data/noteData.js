@@ -1,10 +1,9 @@
-import { Note } from "../modules/note.js";
-import { sidebarAddNote } from "../addNote.js";
+import { Note } from "../classes.js";
+import { sidebarAddNote } from "../uiManager.js";
 
-export const allNotes = Note.noteList;
+const allNotes = Note.noteList;
 
-
-export function logDefaultNotes() {
+function initDefaultNotes() {
     const note1 = new Note('Quotes');
     note1.text = `~ Henry Ford ~
 Whether you think you can or think you can't, you are right.
@@ -46,3 +45,5 @@ note2.text = `- Alex Thompson: March 12, 1992
     //NOTES
     console.log(allNotes);
 }
+
+export { allNotes, initDefaultNotes };
