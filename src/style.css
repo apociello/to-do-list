@@ -374,9 +374,11 @@ input[type="date"],
     height: 100%;
     resize: none;
     outline: none; 
-    border: 1px solid #ccc;  
+    border: 3px solid #475569;
     font-size: 1rem;
     line-height: 1.5;
     padding: 1rem;
-    color: #3a4a64;
+    color: #E2E8F0; 
+    background-color: #334155;
+    border-radius: 10px;
 }

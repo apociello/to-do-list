@@ -12,6 +12,7 @@ function notePage(noteName) {
     title.textContent = note.title;
 
     const textarea = document.createElement('textarea');
+    textarea.placeholder = 'Write your thoughts...'
     textarea.value = note.text;
     textarea.addEventListener('input', () => {
         note.text = textarea.value;
