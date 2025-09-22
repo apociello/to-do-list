@@ -1,0 +1,122 @@
+.sidebar {
+    background-color: #0F172A;
+    padding: 1rem 0.5rem;
+    font-size: 1.6rem;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    width: 50px;
+}
+
+.sidebar-header {
+    margin-bottom: 1.3rem;
+    padding-left: 0.5rem;
+}
+
+.sidebar-sections {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 1.3rem;
+    max-height: 100%;
+    overflow-y: hidden;
+}
+
+.create {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+    overflow-y: auto;
+    max-height: 100%;
+}
+
+.create .sidebar-line:hover {
+    cursor: default;
+}
+
+.sidebar-line, 
+.file-line {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.4rem;
+    margin-bottom: 0.1rem;
+}
+
+li.file-line{
+    list-style: none;
+    color: rgb(136, 136, 136);
+    font-size: 0.8em;
+    padding-left: 1.5rem;
+}
+
+.sidebar-line-right {
+    padding: 0 0.5rem; 
+    display: none;
+}
+
+.file-line .sidebar-line-right {
+    display: flex;
+    gap: 0.5rem;
+    display: none;
+}
+
+.sidebar-line-right-icon {
+    width: 20px;
+    border-radius: 5px;
+}
+
+.sidebar-add-icon {
+    cursor: pointer;
+    width: 23px;
+    border-radius: 5px;
+}
+
+.sidebar-add-icon:hover,
+.sidebar-line-right-icon:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.sidebar-line-left {
+    display: flex;
+    gap: 0.5rem;
+    min-width: 0;
+}
+
+.sidebar-line-left p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+li.file-line .sidebar-line-left {
+    gap: 0.3rem
+}
+
+
+.sidebar-line:hover,
+.file-line:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 5px;
+}
+
+.sidebar-line:hover .sidebar-line-right,
+.file-line:hover .sidebar-line-right {
+    display: flex;
+}
+
+.sidebar-icon {
+    width: 30px;
+}
+
+.task-icon {
+    width: 25px;
+}
+
+.file-icon {
+    width: 24px;
+}

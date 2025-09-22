@@ -1,0 +1,86 @@
+main {
+    background-color:#1E293B;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    overflow-y: auto;
+}
+
+#title {
+    align-self: center;
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+#main-div {
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0 4rem;
+}
+
+/* TASK */
+.task-div {
+    background-color: #334155;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+}
+
+.task-div-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.check-box {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    accent-color: #38BDF8;
+    flex-shrink: 0;
+}
+
+.task-div-right {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+.task-btns {
+    width: 30px;
+    padding: 0.2rem;
+}
+
+.task-btns:hover {
+    background-color: #46566d;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.task-done {
+    color: gray;
+    text-decoration: line-through;
+    text-decoration-color: gray;
+}
+
+/* NOTE */
+.height {
+    height: 100%;
+}
+
+#main-div textarea {
+    width: 100%;
+    height: 100%;
+    resize: none;
+    outline: none; 
+    border: 2px solid #475569;
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 1rem;
+    color: #E2E8F0; 
+    background-color: #334155;
+    border-radius: 10px;
+}
