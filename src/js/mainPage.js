@@ -1,5 +1,5 @@
 import { startOfDay, isWithinInterval, addWeeks, isSameDay } from "date-fns"
-import { allProjects } from "./data/projectData.js";
+import { allProjects, saveProjects } from "./data/projectData.js";
 import { allNotes } from "./data/noteData.js";
 import editTaskImg from "../images/editTask.svg";
 import trashImg from "../images/whiteTrash.svg";
@@ -166,10 +166,12 @@ function renderTasks(tasks) {
         if (checkBox.checked) {
             task.checked = true;
             taskTitle.classList.toggle('task-done');
+            saveProjects();
             console.log(allProjects);
         } else {
             task.checked = false;
             taskTitle.classList.toggle('task-done');
+            saveProjects();
             console.log(allProjects);
         }
     });
@@ -212,6 +214,7 @@ function renderTasks(tasks) {
                 if (task === projectTask) {
                     project.deleteTask(task);
                     taskDiv.remove();
+                    saveProjects();
                     console.log(allProjects)
                 }
             });

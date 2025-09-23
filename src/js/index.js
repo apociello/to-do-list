@@ -2,14 +2,25 @@ import "../css/general.css";
 import "../css/main.css";
 import "../css/sidebar.css";
 import "../css/dialogs.css";
-import { initSidebarEvents } from "./uiInitializer.js";
-import { initDefaultProjects } from "./data/projectData.js";
-import { initDefaultNotes } from "./data/noteData.js";
-import { initDialogEvents } from "./uiInitializer.js";
+
+import { initSidebarEvents, initDialogEvents } from "./uiInitializer.js";
+import { initDefaultProjects, saveProjects, loadProjects} from "./data/projectData.js";
+import { initDefaultNotes, saveNotes, loadNotes } from "./data/noteData.js";
 
 document.addEventListener('DOMContentLoaded', () => {
-  initDefaultProjects();
-  initDefaultNotes();
+  const hasProjects = localStorage.getItem("projects");
+  const hasNotes = localStorage.getItem("notes");
+  if (hasProjects && hasNotes) {
+    loadProjects();
+    loadNotes();
+  } else {
+    initDefaultProjects();
+    initDefaultNotes();
+
+    saveProjects();
+    saveNotes();
+  }
+
   initSidebarEvents();
   initDialogEvents();
-})
+});

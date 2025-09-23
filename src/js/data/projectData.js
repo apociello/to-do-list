@@ -72,4 +72,30 @@ function initDefaultProjects() {
     console.log(allProjects)
 }
 
-export {allProjects, initDefaultProjects};
+function saveProjects() {
+    localStorage.setItem("projects", JSON.stringify(allProjects));
+}
+
+function loadProjects() {
+  const saved = JSON.parse(localStorage.getItem("projects")) || [];
+
+  Project.projectList.length = 0;
+
+  saved.forEach(projData => {
+    const proj = new Project(projData.title);
+    sidebarAddProject(proj.title);
+
+    projData.taskList.forEach(taskData => {
+      const task = new Task(
+        taskData.title,
+        taskData.description,
+        taskData.duedate,
+        taskData.priority,
+        taskData.checked
+      );
+      proj.addTask(task);
+    });
+  });
+}
+
+export {allProjects, initDefaultProjects, saveProjects, loadProjects};

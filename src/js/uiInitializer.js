@@ -4,6 +4,8 @@ import { allNotes } from "./data/noteData.js";
 import { inboxPage, todayPage, thisWeekPage, projectPage, notePage } from "./mainPage.js";
 import { sidebarAddProject, projectExits, sidebarAddNote, noteExits } from "./uiManager.js";
 import { format } from "date-fns";
+import { saveProjects } from "./data/projectData.js";
+import { saveNotes } from "./data/noteData.js";
 
 function initSidebarEvents() {
 
@@ -167,6 +169,7 @@ function initDialogEvents() {
         } else {
             addError.classList.add('hidden')
             new Project(projectName);
+            saveProjects();
             sidebarAddProject(projectName);
             console.log(allProjects) 
             addProjectForm.reset();
@@ -199,6 +202,7 @@ function initDialogEvents() {
             allProjects.forEach((project) => {
             if (project.title === oldProjectId) {
                 project.title = inputRename.value;
+                saveProjects();
             }
             })
             console.log(allProjects)
@@ -255,6 +259,7 @@ function initDialogEvents() {
             allProjects.forEach((project) => {
                 if (project.title === mainDivTitle) {
                     project.addTask(newTask);
+                    saveProjects();
                     projectPage(project.title)
                     console.log(allProjects)
                 }
@@ -268,6 +273,7 @@ function initDialogEvents() {
                         task.duedate = dueDate;
                         task.priority = priority;
                         console.log(allProjects);
+                        saveProjects();
 
                         if (mainDivTitle === 'Inbox') {
                             inboxPage(allProjects)
@@ -279,7 +285,7 @@ function initDialogEvents() {
                     }
                 })
             })
-            taskDialog.dataset.edit = "false"
+            taskDialog.dataset.edit = "false";
         } 
         
         taskForm.reset();
@@ -313,6 +319,7 @@ function initDialogEvents() {
         } else {
             addNoteError.classList.add('hidden');
             new Note(noteName);
+            saveNotes();
             sidebarAddNote(noteName);
             console.log(allNotes);
             addNoteForm.reset();
@@ -346,6 +353,7 @@ function initDialogEvents() {
             allNotes.forEach((note) => {
                 if (note.title === oldNoteId) {
                     note.title = inputNoteRename.value;
+                    saveNotes();
                 }
             })
             console.log(allNotes)

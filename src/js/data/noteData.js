@@ -46,4 +46,19 @@ note2.text = `- Alex Thompson: March 12, 1992
     console.log(allNotes);
 }
 
-export { allNotes, initDefaultNotes };
+function saveNotes() {
+    localStorage.setItem("notes", JSON.stringify(allNotes));
+}
+
+function loadNotes() {
+  const saved = JSON.parse(localStorage.getItem("notes")) || [];
+  Note.noteList.length = 0;
+
+  saved.forEach(noteData => {
+    const note = new Note(noteData.title);
+    note.text = noteData.text;
+    sidebarAddNote(note.title);
+  });
+}
+
+export { allNotes, initDefaultNotes, saveNotes, loadNotes };

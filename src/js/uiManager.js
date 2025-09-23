@@ -1,6 +1,6 @@
 import { Project, Note } from "./classes.js";
-import { allProjects } from "./data/projectData.js";
-import { allNotes } from "./data/noteData.js";
+import { allProjects, saveProjects } from "./data/projectData.js";
+import { allNotes, saveNotes } from "./data/noteData.js";
 import fileIconImg from "../images/file.svg";
 import renameIcon from "../images/edit.svg";
 import trashIcon from "../images/trash.svg";
@@ -82,6 +82,7 @@ function deleteProjectBtn() {
         if (project.title === projectName) {
           Project.deleteProject(project);
           projectLi.remove();
+          saveProjects();
           
           if (allProjects.length == 0 || mainDivTitle === projectName) {
             const addTaskBtn = document.querySelector('.add-task-btn');
@@ -91,7 +92,7 @@ function deleteProjectBtn() {
           }
         }
       });
-      
+
       console.log(allProjects)
     })
 
@@ -178,6 +179,7 @@ function deleteNoteBtn() {
         if (note.title === noteName) {
           Note.deleteNote(note);
           noteLi.remove();
+          saveNotes();
           
           if (allNotes.length == 0 || mainDivTitle === noteName) {
             const addTaskBtn = document.querySelector('.add-task-btn');// IGUAL SE PUEDE QUITAR
