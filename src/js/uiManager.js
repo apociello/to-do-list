@@ -1,9 +1,9 @@
 import { Project, Note } from "./classes.js";
 import { allProjects } from "./data/projectData.js";
-import { allNotes } from "./data/noteData";
-import fileIconImg from "./images/file.svg";
-import renameIcon from "./images/edit.svg";
-import trashIcon from "./images/trash.svg";
+import { allNotes } from "./data/noteData.js";
+import fileIconImg from "../images/file.svg";
+import renameIcon from "../images/edit.svg";
+import trashIcon from "../images/trash.svg";
 import { initProjectEvents } from "./uiInitializer.js";
 import { initNoteEvents } from "./uiInitializer.js";
 

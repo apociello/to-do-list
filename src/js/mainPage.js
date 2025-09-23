@@ -1,8 +1,8 @@
 import { startOfDay, isWithinInterval, addWeeks, isSameDay } from "date-fns"
 import { allProjects } from "./data/projectData.js";
 import { allNotes } from "./data/noteData.js";
-import editTaskImg from "./images/editTask.svg";
-import trashImg from "./images/whiteTrash.svg";
+import editTaskImg from "../images/editTask.svg";
+import trashImg from "../images/whiteTrash.svg";
 
 
 
