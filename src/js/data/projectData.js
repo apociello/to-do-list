@@ -2,6 +2,7 @@ import { Project, Task } from "../classes.js";
 import { sidebarAddProject } from "../uiManager.js";
 import { addDays, format } from "date-fns";
 
+
 const allProjects = Project.projectList;
 
 function initDefaultProjects() {
@@ -97,5 +98,6 @@ function loadProjects() {
     });
   });
 }
+
 
 export {allProjects, initDefaultProjects, saveProjects, loadProjects};

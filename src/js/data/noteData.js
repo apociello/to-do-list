@@ -1,6 +1,7 @@
 import { Note } from "../classes.js";
 import { sidebarAddNote } from "../uiManager.js";
 
+
 const allNotes = Note.noteList;
 
 function initDefaultNotes() {
@@ -20,7 +21,7 @@ God grant me the serenity to accept the things I cannot change, the courage to c
 ~ Earl Nightingale ~
 When you judge others, you do not define them, you define yourself.
 
-~ Emerson ~
+~ Ralph Waldo Emerson ~
 Every man I meet is my superior in some way. In that, I learn of him.
 
 ~ Jim Rohn ~
@@ -60,5 +61,6 @@ function loadNotes() {
     sidebarAddNote(note.title);
   });
 }
+
 
 export { allNotes, initDefaultNotes, saveNotes, loadNotes };

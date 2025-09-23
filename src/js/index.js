@@ -7,9 +7,12 @@ import { initSidebarEvents, initDialogEvents } from "./uiInitializer.js";
 import { initDefaultProjects, saveProjects, loadProjects} from "./data/projectData.js";
 import { initDefaultNotes, saveNotes, loadNotes } from "./data/noteData.js";
 
+
 document.addEventListener('DOMContentLoaded', () => {
   const hasProjects = localStorage.getItem("projects");
   const hasNotes = localStorage.getItem("notes");
+  //localStorage.clear(); reset demo
+
   if (hasProjects && hasNotes) {
     loadProjects();
     loadNotes();

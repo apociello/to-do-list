@@ -5,7 +5,6 @@ import editTaskImg from "../images/editTask.svg";
 import trashImg from "../images/whiteTrash.svg";
 
 
-
 function inboxPage(projects) {
     const title = document.getElementById('title');
     title.textContent = 'Inbox';
@@ -16,7 +15,6 @@ function inboxPage(projects) {
 
     renderTasks(allTasks);
 }
-
 
 function todayPage(projects) {
     const title = document.getElementById('title');
@@ -47,7 +45,6 @@ function thisWeekPage(projects) {
     renderTasks(weekTasks);
 }
 
-
 function projectPage(projectName) {
 
     allProjects.forEach((project) => {
@@ -71,7 +68,6 @@ function projectPage(projectName) {
     })
 }
 
-
 function notePage(noteName) {
     const mainDiv = document.getElementById('main-div');
     mainDiv.innerHTML = ''; 
@@ -93,7 +89,6 @@ function notePage(noteName) {
     mainDiv.appendChild(textarea);
 }
 
-
 function getAllTasks(projectList) {
     const allTasks = []
 
@@ -106,7 +101,6 @@ function getAllTasks(projectList) {
     
     return allTasks;
 }
-
 
 function getWeekTasks(allTasks) {
     const weekTasks = [];
@@ -124,7 +118,6 @@ function getWeekTasks(allTasks) {
         return weekTasks
 }
 
-
 function getTodayTasks(allTasks) {
     const todayTasks = [];
 
@@ -138,7 +131,6 @@ function getTodayTasks(allTasks) {
 
     return todayTasks
 }
-
 
 function renderTasks(tasks) {
     const projects = allProjects;
@@ -230,4 +222,4 @@ function renderTasks(tasks) {
 }
 
 
-export { inboxPage, todayPage, thisWeekPage, projectPage, notePage }
+export { inboxPage, todayPage, thisWeekPage, projectPage, notePage };

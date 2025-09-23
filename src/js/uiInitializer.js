@@ -7,6 +7,7 @@ import { format } from "date-fns";
 import { saveProjects } from "./data/projectData.js";
 import { saveNotes } from "./data/noteData.js";
 
+
 function initSidebarEvents() {
 
     const inboxBtn = document.getElementById('inboxBtn');

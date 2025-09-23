@@ -203,4 +203,4 @@ function noteExits(noteName) {
 }
 
 
-export { sidebarAddProject, projectExits, sidebarAddNote, noteExits  }
+export { sidebarAddProject, projectExits, sidebarAddNote, noteExits  };
