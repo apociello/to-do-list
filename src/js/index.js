@@ -1,3 +1,4 @@
+import { inject } from '@vercel/analytics';
 import "../css/general.css";
 import "../css/main.css";
 import "../css/sidebar.css";
@@ -7,6 +8,7 @@ import { initSidebarEvents, initDialogEvents } from "./uiInitializer.js";
 import { initDefaultProjects, saveProjects, loadProjects} from "./data/projectData.js";
 import { initDefaultNotes, saveNotes, loadNotes } from "./data/noteData.js";
 
+inject();
 
 document.addEventListener('DOMContentLoaded', () => {
   const hasProjects = localStorage.getItem("projects");
